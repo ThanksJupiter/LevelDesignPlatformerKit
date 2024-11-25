@@ -98,7 +98,10 @@ ping_pong = true
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -35.0779, 2.7273, -8.92648)
 
 [node name="trap-spikes" parent="World" instance=ExtResource("11_s1f4a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.578, 2.71517, -4.91552)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2489, 2.85613, -1.09525)
+
+[node name="trap-spikes3" parent="World" instance=ExtResource("11_s1f4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2502, 2.85888, -1.85633)
 
 [node name="trap-spikes2" parent="World" instance=ExtResource("11_s1f4a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3781, 2.71517, -4.91552)
@@ -153,11 +156,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.9883, 2.20613, -5.4)
 [node name="platform-medium" parent="World" instance=ExtResource("17_qgsha")]
 transform = Transform3D(0.86084, 0, -0.508876, 0, 1, 0, 0.508876, 0, 0.86084, -5.83677, 1.85731, 1.13776)
 
+[node name="platform-medium3" parent="World" instance=ExtResource("17_qgsha")]
+transform = Transform3D(0.9945, 0, -0.104737, 0, 1, 0, 0.104737, 0, 0.9945, -21.4491, -4.69027, -0.896376)
+
 [node name="platform-medium2" parent="World" instance=ExtResource("17_qgsha")]
 transform = Transform3D(0.997325, 0, 0.073099, 0, 1, 0, -0.073099, 0, 0.997325, -20.3597, 4.41057, 6.41009)
 
 [node name="platform-falling" parent="World" instance=ExtResource("18_x8jhr")]
 transform = Transform3D(0.989985, 0, -0.141178, 0, 1, 0, 0.141178, 0, 0.989985, -9.67817, 1.89327, -0.633746)
+
+[node name="platform-falling5" parent="World" instance=ExtResource("18_x8jhr")]
+transform = Transform3D(0.999228, 0, -0.0392949, 0, 1, 0, 0.0392949, 0, 0.999228, -25.6438, 2.5508, -4.35462)
+
+[node name="platform-falling2" parent="World" instance=ExtResource("18_x8jhr")]
+transform = Transform3D(0.989985, 0, -0.141178, 0, 1, 0, 0.141178, 0, 0.989985, -12.0096, -0.0319605, -0.633746)
+
+[node name="platform-falling3" parent="World" instance=ExtResource("18_x8jhr")]
+transform = Transform3D(0.989985, 0, -0.141178, 0, 1, 0, 0.141178, 0, 0.989985, -14.9767, -2.05034, -0.633746)
+
+[node name="platform-falling4" parent="World" instance=ExtResource("18_x8jhr")]
+transform = Transform3D(0.989985, 0, -0.141178, 0, 1, 0, 0.141178, 0, 0.989985, -17.9021, -4.37314, -0.633746)
 
 [node name="platform-grass-large-round" parent="World" instance=ExtResource("19_qait6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.498435, 1.04456, 6.24435)
@@ -317,3 +335,5 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -30.5423, 2.65714, -3.41335)
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]
 [connection signal="pressed" from="HUD/Control/PlayAgainButton" to="HUD" method="_on_play_again_button_pressed"]
+
+[editable path="World/platform-moving"]
