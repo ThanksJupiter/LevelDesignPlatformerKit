@@ -1,0 +1,336 @@
+[gd_scene load_steps=24 format=3 uid="uid://dc413yqtkfwyd"]
+
+[ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_yag88"]
+[ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_2sw6r"]
+[ext_resource type="PackedScene" uid="uid://dk1inne27lf4o" path="res://models/prototyping/models/hat-cap.glb" id="3_os5cl"]
+[ext_resource type="Script" path="res://scripts/view.gd" id="3_rsqiq"]
+[ext_resource type="PackedScene" uid="uid://dcwanjaahb4g1" path="res://models/prototyping/models/vehicle-convertible.glb" id="3_yjj6h"]
+[ext_resource type="Script" path="res://scripts/moving_object_path_3d.gd" id="7_11nae"]
+[ext_resource type="PackedScene" uid="uid://3j4trigy1pb2" path="res://models/prototyping/models/vehicle.glb" id="8_ohitp"]
+[ext_resource type="PackedScene" uid="uid://bunxb353h3lje" path="res://objects/damage_dealer_area_3d.tscn" id="9_ykuiv"]
+[ext_resource type="PackedScene" uid="uid://cnymdajj1vsqm" path="res://objects/platform.tscn" id="16_jleww"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="22_vjl78"]
+[ext_resource type="Texture2D" uid="uid://cd7oyc56ehkx1" path="res://sprites/coin.png" id="23_tokxw"]
+[ext_resource type="LabelSettings" uid="uid://daohhjonjrdx8" path="res://themes/label_settings.tres" id="24_cpxb1"]
+[ext_resource type="FontFile" uid="uid://d0cxd77jybrcn" path="res://fonts/lilita_one_regular.ttf" id="25_1md4o"]
+[ext_resource type="Theme" uid="uid://d3avl0mr4r87l" path="res://themes/default_theme.tres" id="26_1fakh"]
+[ext_resource type="Texture2D" uid="uid://dm50aa4qogm65" path="res://sprites/button_rectangle_depth_gloss.png" id="27_bpwi2"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_u8ojw"]
+auto_exposure_scale = 0.75
+dof_blur_far_distance = 0.01
+
+[sub_resource type="Curve3D" id="Curve3D_rl3wu"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -6, -1, 10, 0, 0, 0, 0, 0, 0, 6, -1, 10),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_ckxkq"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 6, -1, 20, 0, 0, 0, 0, 0, 0, -6, -1, 20),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_73pg5"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 6, -1, 40, 0, 0, 0, 0, 0, 0, -6, -1, 30),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n82vd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ri8jt"]
+font = ExtResource("25_1md4o")
+font_size = 128
+shadow_color = Color(0, 0, 0, 0.376471)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x4d2s"]
+font = ExtResource("25_1md4o")
+font_size = 32
+shadow_color = Color(0, 0, 0, 0.376471)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_v6r7m"]
+font = ExtResource("25_1md4o")
+font_size = 42
+shadow_color = Color(0, 0, 0, 0.376471)
+shadow_offset = Vector2(2, 2)
+
+[node name="Main" type="Node3D"]
+
+[node name="Environment" type="WorldEnvironment" parent="."]
+unique_name_in_owner = true
+environment = ExtResource("1_yag88")
+camera_attributes = SubResource("CameraAttributesPractical_u8ojw")
+
+[node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("2_2sw6r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0795298, 0.486399, -98.2941)
+view = NodePath("../View")
+movement_speed = 700
+
+[node name="Character" parent="Player" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.411324, -0.0663722)
+
+[node name="leg-left" parent="Player/Character/character/root" index="0"]
+visible = false
+
+[node name="leg-right" parent="Player/Character/character/root" index="1"]
+visible = false
+
+[node name="hat-cap2" parent="Player/Character/character/root/torso/antenna" index="0" instance=ExtResource("3_os5cl")]
+transform = Transform3D(-1.00536e-07, 0, 2.3, -1.49012e-08, 2.3, 0, -2.3, -1.49012e-08, -1.00536e-07, 0, -0.0132037, 0.0513381)
+
+[node name="vehicle-convertible" parent="Player" instance=ExtResource("3_yjj6h")]
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 0, 0, 0)
+
+[node name="View" type="Node3D" parent="." node_paths=PackedStringArray("target") groups=["View"]]
+process_mode = 3
+transform = Transform3D(-1, 6.38135e-08, -1.36849e-07, 0, 0.906308, 0.422618, 1.50996e-07, 0.422618, -0.906308, 0, 0, 68.5862)
+script = ExtResource("3_rsqiq")
+target = NodePath("../Player")
+
+[node name="Camera" type="Camera3D" parent="View"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+v_offset = 2.0
+current = true
+fov = 40.0
+
+[node name="Level" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00230551, -4.76837e-07, 0.0136247)
+
+[node name="platform5" parent="Level" instance=ExtResource("16_jleww")]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 30, 0, -2, 20)
+
+[node name="platform6" parent="Level" instance=ExtResource("16_jleww")]
+transform = Transform3D(3.24887, 0, 0, 0, 1, 0, 0, 0, 28.4499, 0, -2, 87.367)
+
+[node name="platform7" parent="Level" instance=ExtResource("16_jleww")]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 33.8842, 0.0184431, -1.97349, -69.5798)
+
+[node name="platform8" parent="Level" instance=ExtResource("16_jleww")]
+transform = Transform3D(5.95429, 0, 0, 0, 6.92591, 0, 0, 0, 1, 3.54909, -2.0202, -65.7343)
+
+[node name="platform9" parent="Level" instance=ExtResource("16_jleww")]
+transform = Transform3D(5.95429, 0, 0, 0, 6.92591, 0, 0, 0, 1, -3.79868, -2.0202, -53.4344)
+
+[node name="platform10" parent="Level" instance=ExtResource("16_jleww")]
+transform = Transform3D(10.1611, 0, 0, 0, 1.55751, 0, 0, 0, 3.0337, 2.32831e-09, -1.70668, -38.2414)
+
+[node name="platform14" parent="Level" instance=ExtResource("16_jleww")]
+transform = Transform3D(10.1611, 0, 0, 0, 1.55751, 0, 0, 0, 3.0337, 2.32831e-09, -1.70668, -80.9051)
+
+[node name="platform11" parent="Level" instance=ExtResource("16_jleww")]
+transform = Transform3D(1.954, 0, 0, 0, 1.558, 0, 0, 0, 2.95853, -4.11461, -1.70668, -28.259)
+
+[node name="platform12" parent="Level" instance=ExtResource("16_jleww")]
+transform = Transform3D(8.48213, 0, 0, 0, 1.558, 0, 0, 0, 1.58099, 0.99648, -1.70668, -23.92)
+
+[node name="platform13" parent="Level" instance=ExtResource("16_jleww")]
+transform = Transform3D(10.7144, 0, 0, 0, 8.04767, 0, 0, 0, 1.58099, -9.78406, -1.70668, -17.3877)
+
+[node name="cars" type="Node3D" parent="Level"]
+
+[node name="Path3D" type="Path3D" parent="Level/cars" node_paths=PackedStringArray("object_to_move")]
+curve = SubResource("Curve3D_rl3wu")
+script = ExtResource("7_11nae")
+object_to_move = NodePath("../Car")
+movement_speed = 5.0
+ping_pong = true
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Level/cars/Path3D"]
+transform = Transform3D(-4.37113e-08, 0, -0.999994, 0, 0.999996, 0, 0.999998, 0, -4.37111e-08, -6, -1, 10)
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Level/cars/Path3D/PathFollow3D"]
+
+[node name="Path3D2" type="Path3D" parent="Level/cars" node_paths=PackedStringArray("object_to_move")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00230551, 4.76837e-07, -0.0136247)
+curve = SubResource("Curve3D_ckxkq")
+script = ExtResource("7_11nae")
+object_to_move = NodePath("../Car2")
+movement_speed = 5.0
+ping_pong = true
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Level/cars/Path3D2"]
+transform = Transform3D(-4.37113e-08, 0, 0.999993, 0, 0.999996, 0, -0.999997, 0, -4.37111e-08, 6, -1, 20)
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Level/cars/Path3D2/PathFollow3D"]
+
+[node name="Path3D3" type="Path3D" parent="Level/cars" node_paths=PackedStringArray("object_to_move")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00230551, 4.76837e-07, -0.0136247)
+curve = SubResource("Curve3D_73pg5")
+script = ExtResource("7_11nae")
+object_to_move = NodePath("../Car3")
+movement_speed = 5.0
+ping_pong = true
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Level/cars/Path3D3"]
+transform = Transform3D(0.640182, 0, 0.768216, 0, 0.999996, 0, -0.768219, 0, 0.64018, 6, -1, 40)
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Level/cars/Path3D3/PathFollow3D"]
+
+[node name="Car" type="Node3D" parent="Level/cars"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 10)
+
+[node name="vehicle" parent="Level/cars/Car" instance=ExtResource("8_ohitp")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 0, -0.525, 0)
+
+[node name="DamageDealerArea3D" parent="Level/cars/Car/vehicle" instance=ExtResource("9_ykuiv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.2625, 0)
+only_push = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Level/cars/Car/vehicle/DamageDealerArea3D"]
+shape = SubResource("BoxShape3D_n82vd")
+
+[node name="Car2" type="Node3D" parent="Level/cars"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2.87406, 0, 20.6191)
+
+[node name="vehicle" parent="Level/cars/Car2" instance=ExtResource("8_ohitp")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 0, -0.525, 0)
+
+[node name="DamageDealerArea3D" parent="Level/cars/Car2/vehicle" instance=ExtResource("9_ykuiv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.2625, 0)
+only_push = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Level/cars/Car2/vehicle/DamageDealerArea3D"]
+shape = SubResource("BoxShape3D_n82vd")
+
+[node name="Car3" type="Node3D" parent="Level/cars"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2.87406, 0, 30.411)
+
+[node name="vehicle" parent="Level/cars/Car3" instance=ExtResource("8_ohitp")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 0, -0.525, 0)
+
+[node name="DamageDealerArea3D" parent="Level/cars/Car3/vehicle" instance=ExtResource("9_ykuiv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.2625, 0)
+only_push = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Level/cars/Car3/vehicle/DamageDealerArea3D"]
+shape = SubResource("BoxShape3D_n82vd")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
+shadow_enabled = true
+shadow_opacity = 0.75
+
+[node name="HUD" type="CanvasLayer" parent="." groups=["HUD"]]
+process_mode = 3
+script = ExtResource("22_vjl78")
+
+[node name="Control" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="TextureRect" parent="HUD/Control"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 67.0
+offset_right = 313.0
+offset_bottom = 323.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("23_tokxw")
+
+[node name="x" type="Label" parent="HUD/Control"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 64.0
+offset_right = 144.0
+offset_bottom = 123.0
+text = "×"
+label_settings = ExtResource("24_cpxb1")
+
+[node name="Level Complete" type="Label" parent="HUD/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -429.0
+offset_top = 139.0
+offset_right = 429.0
+offset_bottom = 287.0
+grow_horizontal = 2
+text = "Level Complete!"
+label_settings = SubResource("LabelSettings_ri8jt")
+
+[node name="CoinsLabel" type="Label" parent="HUD/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 144.0
+offset_top = 64.0
+offset_right = 368.0
+offset_bottom = 123.0
+text = "0"
+label_settings = ExtResource("24_cpxb1")
+
+[node name="PlayAgainButton" type="Button" parent="HUD/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -196.0
+offset_top = -258.0
+offset_right = 196.0
+offset_bottom = -122.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+theme = ExtResource("26_1fakh")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("25_1md4o")
+theme_override_font_sizes/font_size = 60
+text = "Play Again?"
+icon = ExtResource("27_bpwi2")
+flat = true
+icon_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="HUD/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.5
+offset_top = 59.0
+offset_right = 48.5
+offset_bottom = 115.0
+grow_horizontal = 2
+text = "00"
+label_settings = SubResource("LabelSettings_x4d2s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeNameLabel" type="Label" parent="HUD/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.0
+offset_top = 22.0
+offset_right = 49.0
+offset_bottom = 78.0
+grow_horizontal = 2
+text = "TIME"
+label_settings = SubResource("LabelSettings_v6r7m")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
+[connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]
+[connection signal="pressed" from="HUD/Control/PlayAgainButton" to="HUD" method="_on_play_again_button_pressed"]
+
+[editable path="Player"]
+[editable path="Player/Character"]
