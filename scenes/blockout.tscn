@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dc413yqtkfwyd"]
+[gd_scene load_steps=30 format=3 uid="uid://dc413yqtkfwyd"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_yag88"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_2sw6r"]
@@ -8,7 +8,12 @@
 [ext_resource type="Script" path="res://scripts/moving_object_path_3d.gd" id="7_11nae"]
 [ext_resource type="PackedScene" uid="uid://3j4trigy1pb2" path="res://models/prototyping/models/vehicle.glb" id="8_ohitp"]
 [ext_resource type="PackedScene" uid="uid://bunxb353h3lje" path="res://objects/damage_dealer_area_3d.tscn" id="9_ykuiv"]
+[ext_resource type="PackedScene" uid="uid://dfpisimsgf5ce" path="res://objects/coin.tscn" id="11_ggjby"]
+[ext_resource type="PackedScene" uid="uid://cxea8lmw7cy1l" path="res://objects/player_kill_volume.tscn" id="12_e8o2y"]
 [ext_resource type="PackedScene" uid="uid://cnymdajj1vsqm" path="res://objects/platform.tscn" id="16_jleww"]
+[ext_resource type="PackedScene" uid="uid://bs65o07otxbmm" path="res://objects/moving_object_path_3d.tscn" id="18_25611"]
+[ext_resource type="PackedScene" uid="uid://bpharv43ulngb" path="res://objects/platform_moving.tscn" id="18_in04m"]
+[ext_resource type="PackedScene" uid="uid://g73m8k0j7lyo" path="res://objects/button.tscn" id="19_udrhw"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="22_vjl78"]
 [ext_resource type="Texture2D" uid="uid://cd7oyc56ehkx1" path="res://sprites/coin.png" id="23_tokxw"]
 [ext_resource type="LabelSettings" uid="uid://daohhjonjrdx8" path="res://themes/label_settings.tres" id="24_cpxb1"]
@@ -61,6 +66,13 @@ font_size = 42
 shadow_color = Color(0, 0, 0, 0.376471)
 shadow_offset = Vector2(2, 2)
 
+[sub_resource type="Curve3D" id="Curve3D_bcud5"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 10.5, -0.708333, -18.5, 0, 0, 0, 0, 0, 0, 0.391757, 2.61579, -2.43942, 0, 0, 0, 0, 0, 0, 0.392, -2.009, -2.439),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
 [node name="Main" type="Node3D"]
 
 [node name="Environment" type="WorldEnvironment" parent="."]
@@ -84,6 +96,10 @@ visible = false
 
 [node name="hat-cap2" parent="Player/Character/character/root/torso/antenna" index="0" instance=ExtResource("3_os5cl")]
 transform = Transform3D(-1.00536e-07, 0, 2.3, -1.49012e-08, 2.3, 0, -2.3, -1.49012e-08, -1.00536e-07, 0, -0.0132037, 0.0513381)
+
+[node name="ParticlesTrail" parent="Player" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.231165, 0)
+gravity = Vector3(0, -1, 0)
 
 [node name="vehicle-convertible" parent="Player" instance=ExtResource("3_yjj6h")]
 transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 0, 0, 0)
@@ -110,32 +126,19 @@ transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 30, 0, -2, 20)
 transform = Transform3D(3.24887, 0, 0, 0, 1, 0, 0, 0, 28.4499, 0, -2, 87.367)
 
 [node name="platform7" parent="Level" instance=ExtResource("16_jleww")]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 33.8842, 0.0184431, -1.97349, -69.5798)
+transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 30, 0.0184431, -1.97349, -69.5798)
 
 [node name="platform8" parent="Level" instance=ExtResource("16_jleww")]
-transform = Transform3D(5.95429, 0, 0, 0, 6.92591, 0, 0, 0, 1, 3.54909, -2.0202, -65.7343)
-
-[node name="platform9" parent="Level" instance=ExtResource("16_jleww")]
-transform = Transform3D(5.95429, 0, 0, 0, 6.92591, 0, 0, 0, 1, -3.79868, -2.0202, -53.4344)
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 15, 0.018, -10, -54.58)
 
 [node name="platform10" parent="Level" instance=ExtResource("16_jleww")]
-transform = Transform3D(10.1611, 0, 0, 0, 1.55751, 0, 0, 0, 3.0337, 2.32831e-09, -1.70668, -38.2414)
-
-[node name="platform14" parent="Level" instance=ExtResource("16_jleww")]
-transform = Transform3D(10.1611, 0, 0, 0, 1.55751, 0, 0, 0, 3.0337, 2.32831e-09, -1.70668, -80.9051)
-
-[node name="platform11" parent="Level" instance=ExtResource("16_jleww")]
-transform = Transform3D(1.954, 0, 0, 0, 1.558, 0, 0, 0, 2.95853, -4.11461, -1.70668, -28.259)
-
-[node name="platform12" parent="Level" instance=ExtResource("16_jleww")]
-transform = Transform3D(8.48213, 0, 0, 0, 1.558, 0, 0, 0, 1.58099, 0.99648, -1.70668, -23.92)
-
-[node name="platform13" parent="Level" instance=ExtResource("16_jleww")]
-transform = Transform3D(10.7144, 0, 0, 0, 8.04767, 0, 0, 0, 1.58099, -9.78406, -1.70668, -17.3877)
+transform = Transform3D(10, 0, 0, 0, 2, 0, 0, 0, 10, 2.32831e-09, -2.47947, -37.2968)
+visible = false
 
 [node name="cars" type="Node3D" parent="Level"]
 
 [node name="Path3D" type="Path3D" parent="Level/cars" node_paths=PackedStringArray("object_to_move")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00230551, 4.76837e-07, -0.0136247)
 curve = SubResource("Curve3D_rl3wu")
 script = ExtResource("7_11nae")
 object_to_move = NodePath("../Car")
@@ -211,6 +214,41 @@ only_push = true
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Level/cars/Car3/vehicle/DamageDealerArea3D"]
 shape = SubResource("BoxShape3D_n82vd")
+
+[node name="coin" parent="Level" instance=ExtResource("11_ggjby")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.64769, -1.03387, -76.9321)
+
+[node name="coin2" parent="Level" instance=ExtResource("11_ggjby")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.64492, -1.03387, -75.2297)
+
+[node name="coin3" parent="Level" instance=ExtResource("11_ggjby")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71345, -1.03387, -90.478)
+
+[node name="coin4" parent="Level" instance=ExtResource("11_ggjby")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71345, -1.03387, -88.2094)
+
+[node name="coin5" parent="Level" instance=ExtResource("11_ggjby")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71345, -1.03387, -86.1906)
+
+[node name="coin6" parent="Level" instance=ExtResource("11_ggjby")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71345, -1.03387, -84.2432)
+
+[node name="coin7" parent="Level" instance=ExtResource("11_ggjby")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71345, -1.03387, -81.62)
+
+[node name="coin8" parent="Level" instance=ExtResource("11_ggjby")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71345, -1.03387, -79.9318)
+
+[node name="coin9" parent="Level" instance=ExtResource("11_ggjby")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71345, -1.03387, -77.6301)
+
+[node name="coin10" parent="Level" instance=ExtResource("11_ggjby")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71345, -1.03387, -75.653)
+
+[node name="player_kill_volume" parent="Level" instance=ExtResource("12_e8o2y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00230551, -10, -0.0136247)
+
+[node name="ParkingLot" type="Node3D" parent="."]
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
@@ -328,9 +366,25 @@ label_settings = SubResource("LabelSettings_v6r7m")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="moving_object_path" parent="." node_paths=PackedStringArray("object_to_move") instance=ExtResource("18_25611")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+curve = SubResource("Curve3D_bcud5")
+object_to_move = NodePath("../platform-moving")
+movement_speed = 5.0
+is_on_from_start = false
+
+[node name="platform-moving" parent="." instance=ExtResource("18_in04m")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 21.5868, -1.82595, -37.3349)
+
+[node name="button" parent="platform-moving" node_paths=PackedStringArray("target") instance=ExtResource("19_udrhw")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, -0.0388622, 0.163415, -0.0807419)
+visible = false
+target = NodePath("../../moving_object_path")
+
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]
 [connection signal="pressed" from="HUD/Control/PlayAgainButton" to="HUD" method="_on_play_again_button_pressed"]
 
 [editable path="Player"]
 [editable path="Player/Character"]
+[editable path="platform-moving"]
