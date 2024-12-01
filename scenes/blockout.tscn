@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dc413yqtkfwyd"]
+[gd_scene load_steps=32 format=3 uid="uid://dc413yqtkfwyd"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_yag88"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_2sw6r"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bs65o07otxbmm" path="res://objects/moving_object_path_3d.tscn" id="18_25611"]
 [ext_resource type="PackedScene" uid="uid://bpharv43ulngb" path="res://objects/platform_moving.tscn" id="18_in04m"]
 [ext_resource type="PackedScene" uid="uid://g73m8k0j7lyo" path="res://objects/button.tscn" id="19_udrhw"]
+[ext_resource type="PackedScene" uid="uid://0mn1xjytgkek" path="res://prefabs/door.tscn" id="21_ptqt1"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="22_vjl78"]
 [ext_resource type="Texture2D" uid="uid://cd7oyc56ehkx1" path="res://sprites/coin.png" id="23_tokxw"]
 [ext_resource type="LabelSettings" uid="uid://daohhjonjrdx8" path="res://themes/label_settings.tres" id="24_cpxb1"]
@@ -32,12 +33,21 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="Curve3D" id="Curve3D_ckxkq"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_n82vd"]
+
+[sub_resource type="Curve3D" id="Curve3D_dvatl"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 6, -1, 20, 0, 0, 0, 0, 0, 0, -6, -1, 20),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 6, -1, 17, 0, 0, 0, 0, 0, 0, -6, -1, 17),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_ckxkq"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, -1, 25, 0, 0, 0, 0, 0, 0, 6, -1, 25, 0, 0, 0, 0, 0, 0, -6, -1, 25),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
 
 [sub_resource type="Curve3D" id="Curve3D_73pg5"]
 _data = {
@@ -45,8 +55,6 @@ _data = {
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_n82vd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ri8jt"]
 font = ExtResource("25_1md4o")
@@ -68,10 +76,10 @@ shadow_offset = Vector2(2, 2)
 
 [sub_resource type="Curve3D" id="Curve3D_bcud5"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 10.5, -0.708333, -18.5, 0, 0, 0, 0, 0, 0, 0.391757, 2.61579, -2.43942, 0, 0, 0, 0, 0, 0, 0.392, -2.009, -2.439),
-"tilts": PackedFloat32Array(0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, -1.006, -24, 0, 0, 0, 0, 0, 0, 0, -0.628786, -24, 0, 0, 0, 0, 0, 0, 0, -0.628786, -6.01043, 0, 0, 0, 0, 0, 0, 0, -3.86886, -6.01),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
 }
-point_count = 3
+point_count = 4
 
 [node name="Main" type="Node3D"]
 
@@ -81,7 +89,7 @@ environment = ExtResource("1_yag88")
 camera_attributes = SubResource("CameraAttributesPractical_u8ojw")
 
 [node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("2_2sw6r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0795298, 0.486399, -98.2941)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.466, -95.811)
 view = NodePath("../View")
 movement_speed = 700
 
@@ -106,7 +114,7 @@ transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 
 
 [node name="View" type="Node3D" parent="." node_paths=PackedStringArray("target") groups=["View"]]
 process_mode = 3
-transform = Transform3D(-1, 6.38135e-08, -1.36849e-07, 0, 0.906308, 0.422618, 1.50996e-07, 0.422618, -0.906308, 0, 0, 68.5862)
+transform = Transform3D(-1, 6.38135e-08, -1.36849e-07, 0, 0.906308, 0.422618, 1.50996e-07, 0.422618, -0.906308, 0, 33.2742, 68.5862)
 script = ExtResource("3_rsqiq")
 target = NodePath("../Player")
 
@@ -126,10 +134,25 @@ transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 30, 0, -2, 20)
 transform = Transform3D(3.24887, 0, 0, 0, 1, 0, 0, 0, 28.4499, 0, -2, 87.367)
 
 [node name="platform7" parent="Level" instance=ExtResource("16_jleww")]
-transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 30, 0.0184431, -1.97349, -69.5798)
+transform = Transform3D(-40, 0, -6.03983e-06, 0, 1, 0, 6.03983e-06, 0, -40, 0.0184431, -1.97349, -58.0411)
 
 [node name="platform8" parent="Level" instance=ExtResource("16_jleww")]
-transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 15, 0.018, -10, -54.58)
+transform = Transform3D(-2.32, 0, -1.34918e-06, 0, 0.627466, 0, 3.5031e-07, 0, -8.9352, 0.0184431, -0.818251, -35.7586)
+
+[node name="platform13" parent="Level" instance=ExtResource("16_jleww")]
+transform = Transform3D(-2.489e-07, 0, 8.9352, 0, 0.627466, 0, -2.32, 0, -9.58607e-07, 7.65234, 3.47671, -52.4541)
+
+[node name="platform9" parent="Level" instance=ExtResource("16_jleww")]
+transform = Transform3D(-4.30817, 0, -1.34918e-06, 0, 5.04735, 0, 6.50516e-07, 0, -8.9352, 27.021, -2.68418, -35.7586)
+
+[node name="platform14" parent="Level" instance=ExtResource("16_jleww")]
+transform = Transform3D(-4.30817, 0, -6.13578e-07, 0, 5.04735, 0, 6.50516e-07, 0, -4.06354, 35.9353, -1.05296, -40.6071)
+
+[node name="platform11" parent="Level" instance=ExtResource("16_jleww")]
+transform = Transform3D(-4.30817, 0, -1.34918e-06, 0, 5.04735, 0, 6.50516e-07, 0, -8.9352, 27.021, -1.57252, -80.4769)
+
+[node name="platform12" parent="Level" instance=ExtResource("16_jleww")]
+transform = Transform3D(-11.0686, 0, -1.93349e-06, 0, 13.1256, 0, 1.67132e-06, 0, -12.8049, 25.8969, -3.32665, -58.0373)
 
 [node name="platform10" parent="Level" instance=ExtResource("16_jleww")]
 transform = Transform3D(10, 0, 0, 0, 2, 0, 0, 0, 10, 2.32831e-09, -2.47947, -37.2968)
@@ -141,8 +164,8 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00230551, 4.76837e-07, -0.0136247)
 curve = SubResource("Curve3D_rl3wu")
 script = ExtResource("7_11nae")
-object_to_move = NodePath("../Car")
-movement_speed = 5.0
+object_to_move = NodePath("Car")
+movement_speed = 10.0
 ping_pong = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Level/cars/Path3D"]
@@ -150,25 +173,77 @@ transform = Transform3D(-4.37113e-08, 0, -0.999994, 0, 0.999996, 0, 0.999998, 0,
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Level/cars/Path3D/PathFollow3D"]
 
+[node name="Car" type="Node3D" parent="Level/cars/Path3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.00230551, -4.76837e-07, 10.0136)
+
+[node name="vehicle" parent="Level/cars/Path3D/Car" instance=ExtResource("8_ohitp")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 0, -0.525, 0)
+
+[node name="DamageDealerArea3D" parent="Level/cars/Path3D/Car/vehicle" instance=ExtResource("9_ykuiv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.2625, 0)
+only_push = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Level/cars/Path3D/Car/vehicle/DamageDealerArea3D"]
+shape = SubResource("BoxShape3D_n82vd")
+
 [node name="Path3D2" type="Path3D" parent="Level/cars" node_paths=PackedStringArray("object_to_move")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00230551, 4.76837e-07, -0.0136247)
-curve = SubResource("Curve3D_ckxkq")
+curve = SubResource("Curve3D_dvatl")
 script = ExtResource("7_11nae")
-object_to_move = NodePath("../Car2")
-movement_speed = 5.0
+object_to_move = NodePath("Car2")
+movement_speed = 10.0
 ping_pong = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Level/cars/Path3D2"]
-transform = Transform3D(-4.37113e-08, 0, 0.999993, 0, 0.999996, 0, -0.999997, 0, -4.37111e-08, 6, -1, 20)
+transform = Transform3D(-4.37111e-08, 0, 0.999989, 0, 0.999996, 0, -0.999994, 0, -4.37109e-08, 6, -1, 17)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Level/cars/Path3D2/PathFollow3D"]
+
+[node name="Car2" type="Node3D" parent="Level/cars/Path3D2"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2.876, 0, 17)
+
+[node name="vehicle" parent="Level/cars/Path3D2/Car2" instance=ExtResource("8_ohitp")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 0, -0.525, 0)
+
+[node name="DamageDealerArea3D" parent="Level/cars/Path3D2/Car2/vehicle" instance=ExtResource("9_ykuiv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.2625, 0)
+only_push = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Level/cars/Path3D2/Car2/vehicle/DamageDealerArea3D"]
+shape = SubResource("BoxShape3D_n82vd")
+
+[node name="Path3D4" type="Path3D" parent="Level/cars" node_paths=PackedStringArray("object_to_move")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00230551, 4.76837e-07, -0.0136247)
+curve = SubResource("Curve3D_ckxkq")
+script = ExtResource("7_11nae")
+object_to_move = NodePath("Car2")
+movement_speed = 15.0
+ping_pong = true
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Level/cars/Path3D4"]
+transform = Transform3D(-4.37111e-08, 0, -0.999989, 0, 0.999996, 0, 0.999994, 0, -4.37109e-08, 0, -1, 25)
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Level/cars/Path3D4/PathFollow3D"]
+
+[node name="Car2" type="Node3D" parent="Level/cars/Path3D4"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 5.124, 0, 25)
+
+[node name="vehicle" parent="Level/cars/Path3D4/Car2" instance=ExtResource("8_ohitp")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 0, -0.525, 0)
+
+[node name="DamageDealerArea3D" parent="Level/cars/Path3D4/Car2/vehicle" instance=ExtResource("9_ykuiv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.2625, 0)
+only_push = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Level/cars/Path3D4/Car2/vehicle/DamageDealerArea3D"]
+shape = SubResource("BoxShape3D_n82vd")
 
 [node name="Path3D3" type="Path3D" parent="Level/cars" node_paths=PackedStringArray("object_to_move")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00230551, 4.76837e-07, -0.0136247)
 curve = SubResource("Curve3D_73pg5")
 script = ExtResource("7_11nae")
-object_to_move = NodePath("../Car3")
-movement_speed = 5.0
+object_to_move = NodePath("Car3")
+movement_speed = 20.0
 ping_pong = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Level/cars/Path3D3"]
@@ -176,50 +251,24 @@ transform = Transform3D(0.640182, 0, 0.768216, 0, 0.999996, 0, -0.768219, 0, 0.6
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Level/cars/Path3D3/PathFollow3D"]
 
-[node name="Car" type="Node3D" parent="Level/cars"]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 10)
+[node name="Car3" type="Node3D" parent="Level/cars/Path3D3"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2.87637, -4.76837e-07, 30.4246)
 
-[node name="vehicle" parent="Level/cars/Car" instance=ExtResource("8_ohitp")]
+[node name="vehicle" parent="Level/cars/Path3D3/Car3" instance=ExtResource("8_ohitp")]
 transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 0, -0.525, 0)
 
-[node name="DamageDealerArea3D" parent="Level/cars/Car/vehicle" instance=ExtResource("9_ykuiv")]
+[node name="DamageDealerArea3D" parent="Level/cars/Path3D3/Car3/vehicle" instance=ExtResource("9_ykuiv")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.2625, 0)
 only_push = true
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Level/cars/Car/vehicle/DamageDealerArea3D"]
-shape = SubResource("BoxShape3D_n82vd")
-
-[node name="Car2" type="Node3D" parent="Level/cars"]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2.87406, 0, 20.6191)
-
-[node name="vehicle" parent="Level/cars/Car2" instance=ExtResource("8_ohitp")]
-transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 0, -0.525, 0)
-
-[node name="DamageDealerArea3D" parent="Level/cars/Car2/vehicle" instance=ExtResource("9_ykuiv")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.2625, 0)
-only_push = true
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Level/cars/Car2/vehicle/DamageDealerArea3D"]
-shape = SubResource("BoxShape3D_n82vd")
-
-[node name="Car3" type="Node3D" parent="Level/cars"]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2.87406, 0, 30.411)
-
-[node name="vehicle" parent="Level/cars/Car3" instance=ExtResource("8_ohitp")]
-transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 0, -0.525, 0)
-
-[node name="DamageDealerArea3D" parent="Level/cars/Car3/vehicle" instance=ExtResource("9_ykuiv")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.2625, 0)
-only_push = true
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Level/cars/Car3/vehicle/DamageDealerArea3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Level/cars/Path3D3/Car3/vehicle/DamageDealerArea3D"]
 shape = SubResource("BoxShape3D_n82vd")
 
 [node name="coin" parent="Level" instance=ExtResource("11_ggjby")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.64769, -1.03387, -76.9321)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.6061, 3.9187, -54.5709)
 
 [node name="coin2" parent="Level" instance=ExtResource("11_ggjby")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.64492, -1.03387, -75.2297)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.3206, 1.22134, -78.0545)
 
 [node name="coin3" parent="Level" instance=ExtResource("11_ggjby")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71345, -1.03387, -90.478)
@@ -237,13 +286,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71345, -1.03387, -84.2432)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71345, -1.03387, -81.62)
 
 [node name="coin8" parent="Level" instance=ExtResource("11_ggjby")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71345, -1.03387, -79.9318)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.3235, 1.70176, -39.4436)
 
 [node name="coin9" parent="Level" instance=ExtResource("11_ggjby")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71345, -1.03387, -77.6301)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5895, 3.79518, -52.4464)
+
+[node name="coin11" parent="Level" instance=ExtResource("11_ggjby")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.884, 3.83007, -52.4464)
 
 [node name="coin10" parent="Level" instance=ExtResource("11_ggjby")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71345, -1.03387, -75.653)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.4039, 0.116477, -33.3336)
 
 [node name="player_kill_volume" parent="Level" instance=ExtResource("12_e8o2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00230551, -10, -0.0136247)
@@ -367,19 +419,28 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="moving_object_path" parent="." node_paths=PackedStringArray("object_to_move") instance=ExtResource("18_25611")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 curve = SubResource("Curve3D_bcud5")
 object_to_move = NodePath("../platform-moving")
-movement_speed = 5.0
+movement_speed = 2.0
 is_on_from_start = false
 
-[node name="platform-moving" parent="." instance=ExtResource("18_in04m")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 21.5868, -1.82595, -37.3349)
+[node name="PathFollow3D" parent="moving_object_path" index="0"]
+transform = Transform3D(-4.37108e-08, 0.999991, -4.37111e-08, 0, -4.3711e-08, -0.999993, -0.999986, -4.3711e-08, 1.91067e-15, 0, -1.006, -24)
+cubic_interp = false
+tilt_enabled = false
 
-[node name="button" parent="platform-moving" node_paths=PackedStringArray("target") instance=ExtResource("19_udrhw")]
-transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, -0.0388622, 0.163415, -0.0807419)
-visible = false
-target = NodePath("../../moving_object_path")
+[node name="RemoteTransform3D" parent="moving_object_path/PathFollow3D" index="0"]
+update_scale = false
+
+[node name="button" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_udrhw")]
+transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 4, 0.0065546, -0.178418, -24.0286)
+target = NodePath("../moving_object_path")
+
+[node name="platform-moving" parent="." instance=ExtResource("18_in04m")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1.006, -24)
+
+[node name="door" parent="." instance=ExtResource("21_ptqt1")]
+open_door_with_coins = 5
 
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]
@@ -387,4 +448,6 @@ target = NodePath("../../moving_object_path")
 
 [editable path="Player"]
 [editable path="Player/Character"]
+[editable path="moving_object_path"]
+[editable path="button"]
 [editable path="platform-moving"]
