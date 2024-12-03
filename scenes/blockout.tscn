@@ -63,7 +63,7 @@ point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_ugxnv"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 12.933, 11.9071, 123.859, 0, 0, 0, 0, 0, 0, 12.933, 11.907, 137.679),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 12.933, 11.9071, 126.749, 0, 0, 0, 0, 0, 0, 12.933, 11.907, 136.086),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -557,7 +557,7 @@ movement_speed = 8.0
 ping_pong = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Level/cars/Path3D8"]
-transform = Transform3D(-0.999984, 6.33434e-13, -8.74208e-08, 0, 0.999989, 7.24555e-06, 8.74214e-08, 7.24564e-06, -0.999977, 12.933, 11.9071, 123.859)
+transform = Transform3D(-0.999984, 9.37576e-13, -8.74208e-08, 0, 0.999989, 1.07245e-05, 8.74214e-08, 1.07246e-05, -0.999977, 12.933, 11.9071, 126.749)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Level/cars/Path3D8/PathFollow3D"]
 
@@ -1114,11 +1114,11 @@ transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 
 trampoline_strength = 15.0
 
 [node name="trampoline10" parent="." instance=ExtResource("22_4mr5u")]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -17.3202, 8.35517, 108.936)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -17.3202, 7.87965, 108.936)
 trampoline_strength = 12.0
 
 [node name="trampoline15" parent="." instance=ExtResource("22_4mr5u")]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -17.3202, 9.91194, 120.723)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -17.3202, 9.61547, 120.723)
 trampoline_strength = 12.0
 
 [node name="trampoline11" parent="." instance=ExtResource("22_4mr5u")]
