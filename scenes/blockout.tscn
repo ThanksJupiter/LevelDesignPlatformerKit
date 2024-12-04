@@ -557,7 +557,7 @@ movement_speed = 8.0
 ping_pong = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Level/cars/Path3D8"]
-transform = Transform3D(-0.999984, 9.37576e-13, -8.74208e-08, 0, 0.999989, 1.07245e-05, 8.74214e-08, 1.07246e-05, -0.999977, 12.933, 11.9071, 126.749)
+transform = Transform3D(-0.999984, 9.37566e-13, -8.74208e-08, 0, 0.999989, 1.07244e-05, 8.74214e-08, 1.07245e-05, -0.999977, 12.933, 11.9071, 126.749)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Level/cars/Path3D8/PathFollow3D"]
 
