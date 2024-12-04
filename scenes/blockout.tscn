@@ -16,7 +16,7 @@
 [ext_resource type="Script" path="res://scripts/button.gd" id="19_k1nqx"]
 [ext_resource type="Texture2D" uid="uid://72ldk18ropuj" path="res://models/props/Textures/colormap.png" id="20_wyq6u"]
 [ext_resource type="PackedScene" uid="uid://0mn1xjytgkek" path="res://prefabs/door.tscn" id="21_ptqt1"]
-[ext_resource type="PackedScene" path="res://objects/trampoline.tscn" id="22_4mr5u"]
+[ext_resource type="PackedScene" uid="uid://ytqajrdi7fqj" path="res://objects/trampoline.tscn" id="22_4mr5u"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="22_vjl78"]
 [ext_resource type="Texture2D" uid="uid://cd7oyc56ehkx1" path="res://sprites/coin.png" id="23_tokxw"]
 [ext_resource type="LabelSettings" uid="uid://daohhjonjrdx8" path="res://themes/label_settings.tres" id="24_cpxb1"]
@@ -450,6 +450,7 @@ curve = SubResource("Curve3D_rl3wu")
 script = ExtResource("7_11nae")
 object_to_move = NodePath("Car")
 movement_speed = 5.0
+stop_at_end = null
 ping_pong = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Level/cars/Path3D"]
@@ -476,6 +477,7 @@ curve = SubResource("Curve3D_dvatl")
 script = ExtResource("7_11nae")
 object_to_move = NodePath("Car2")
 movement_speed = 5.0
+stop_at_end = null
 ping_pong = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Level/cars/Path3D2"]
@@ -502,6 +504,7 @@ curve = SubResource("Curve3D_54xuw")
 script = ExtResource("7_11nae")
 object_to_move = NodePath("Car2")
 movement_speed = 12.0
+stop_at_end = null
 ping_pong = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Level/cars/Path3D5"]
@@ -528,6 +531,7 @@ curve = SubResource("Curve3D_wrlq8")
 script = ExtResource("7_11nae")
 object_to_move = NodePath("Car2")
 movement_speed = 8.0
+stop_at_end = null
 ping_pong = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Level/cars/Path3D7"]
@@ -554,6 +558,7 @@ curve = SubResource("Curve3D_ugxnv")
 script = ExtResource("7_11nae")
 object_to_move = NodePath("Car2")
 movement_speed = 8.0
+stop_at_end = null
 ping_pong = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Level/cars/Path3D8"]
@@ -580,6 +585,7 @@ curve = SubResource("Curve3D_7jifu")
 script = ExtResource("7_11nae")
 object_to_move = NodePath("Car2")
 movement_speed = 15.0
+stop_at_end = null
 ping_pong = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Level/cars/Path3D6"]
@@ -606,6 +612,7 @@ curve = SubResource("Curve3D_ckxkq")
 script = ExtResource("7_11nae")
 object_to_move = NodePath("Car2")
 movement_speed = 5.0
+stop_at_end = null
 ping_pong = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Level/cars/Path3D4"]
@@ -632,6 +639,7 @@ curve = SubResource("Curve3D_73pg5")
 script = ExtResource("7_11nae")
 object_to_move = NodePath("Car3")
 movement_speed = 5.0
+stop_at_end = null
 ping_pong = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Level/cars/Path3D3"]
@@ -875,6 +883,7 @@ curve = SubResource("Curve3D_bcud5")
 object_to_move = NodePath("../platform-moving")
 movement_speed = 4.0
 is_on_from_start = false
+stop_at_end = null
 
 [node name="PathFollow3D" parent="moving_object_path" index="0"]
 transform = Transform3D(-4.37108e-08, 0.999991, -4.37111e-08, 0, -4.3711e-08, -0.999993, -0.999986, -4.3711e-08, 1.91067e-15, 0, -3.869, -24)
@@ -889,6 +898,7 @@ curve = SubResource("Curve3D_6v6or")
 object_to_move = NodePath("../platform-moving2")
 movement_speed = 5.0
 is_on_from_start = false
+stop_at_end = null
 
 [node name="PathFollow3D" parent="moving_object_path2" index="0"]
 transform = Transform3D(-4.37108e-08, 0.999991, -4.37111e-08, 0, -4.3711e-08, -0.999993, -0.999986, -4.3711e-08, 1.91067e-15, -1.23665, 7.60677, -66.6314)
@@ -903,6 +913,7 @@ curve = SubResource("Curve3D_yqg13")
 object_to_move = NodePath("../platform-moving3")
 movement_speed = 5.0
 is_on_from_start = false
+stop_at_end = null
 
 [node name="PathFollow3D" parent="moving_object_path3" index="0"]
 transform = Transform3D(-4.37108e-08, 0.999988, -4.3711e-08, 0, -4.37109e-08, -0.999991, -0.999986, -4.37109e-08, 1.91067e-15, 13.299, 14.227, 160.373)

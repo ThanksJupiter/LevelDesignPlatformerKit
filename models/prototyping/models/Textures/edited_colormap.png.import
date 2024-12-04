@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s3ccn5bmupig"
-path.s3tc="res://.godot/imported/tree-snow.png-d59961c874929fd5572f3e62238e43ec.s3tc.ctex"
+uid="uid://dnemm8y1ithqq"
+path.s3tc="res://.godot/imported/edited_colormap.png-24e8589fab99aeffda34c352062b21a4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/props/tree-snow.png"
-dest_files=["res://.godot/imported/tree-snow.png-d59961c874929fd5572f3e62238e43ec.s3tc.ctex"]
+source_file="res://models/prototyping/models/Textures/edited_colormap.png"
+dest_files=["res://.godot/imported/edited_colormap.png-24e8589fab99aeffda34c352062b21a4.s3tc.ctex"]
 
 [params]
 

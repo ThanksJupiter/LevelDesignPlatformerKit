@@ -6,6 +6,7 @@ extends Path3D
 @export var object_to_move : Node
 @export var movement_speed : float = 1.0
 @export var is_on_from_start : bool = true
+@export var stop_at_end : bool = false
 @export var look_at_object_when_activated : bool
 @export var ping_pong : bool
 
@@ -27,6 +28,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if not Engine.is_editor_hint():
+		
+		if stop_at_end and path_follow_3d.progress_ratio > .99:
+				direction = 0
+		
 		if object_to_move and is_on_from_start:
 			if ping_pong:
 				if path_follow_3d.progress_ratio > 0.99:
