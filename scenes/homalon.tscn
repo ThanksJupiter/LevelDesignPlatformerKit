@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://btevw17etm4j8"]
+[gd_scene load_steps=62 format=4 uid="uid://btevw17etm4j8"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_4udou"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_baaoy"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cnymdajj1vsqm" path="res://objects/platform.tscn" id="13_nn5p5"]
 [ext_resource type="PackedScene" uid="uid://cyvet7kb6y80r" path="res://objects/checkpoint.tscn" id="14_d35sw"]
 [ext_resource type="PackedScene" uid="uid://bpharv43ulngb" path="res://objects/platform_moving.tscn" id="15_5vf0d"]
+[ext_resource type="PackedScene" uid="uid://b87snreold7v2" path="res://models/props/ladder-long.glb" id="15_scled"]
 [ext_resource type="PackedScene" uid="uid://c8up71en5djgm" path="res://objects/platform_falling.tscn" id="22_okkbe"]
 [ext_resource type="Script" path="res://objects/platform_falling.gd" id="23_snixi"]
 [ext_resource type="Texture2D" uid="uid://0odt7cvj574e" path="res://models/core_models/Textures/colormap.png" id="24_nlmo3"]
@@ -49,12 +50,24 @@ point_count = 12
 
 [sub_resource type="Curve3D" id="Curve3D_grwwq"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 1, 0, 3.15488, 11.7651, 19.4449, 0, 1, 0, 0, 1, 0, 5.005, 12.5105, 21.0288, 0, 1, 0, 0, 1, 0, 5.005, 13.056, 23.464, 0, 1, 0, 0, 1, 0, 5.005, 13.716, 25.834, 0, 1, 0, 0, 1, 0, 2.775, 14.306, 26.854, 0, 1, 0, 0, 1, 0, 0.02, 14.816, 26.854, 0, 1, 0, 0, 1, 0, -2.56, 15.156, 26.854, 0, 1, 0, 0, 1, 0, -5.32, 15.571, 26.854, 0, 1, 0, 0, 1, 0, -8.135, 15.911, 26.854, 0, 1, 0, 0, 1, 0, -11.4855, 16.266, 27.0139, 0, 1, 0, 0, 0, 0, -13.0005, 16.5943, 24.6805, 0, 0, 0, 0, 0, 0, -8.986, 16.014, 24.681),
+"points": PackedVector3Array(0, 0, 0, 0, 1, 0, 3.15488, 11.7651, 19.4449, 0, 1, 0, 0, 1, 0, 5.005, 13.056, 23.464, 0, 1, 0, 0, 1, 0, 5.005, 13.716, 25.834, 0, 1, 0, 0, 1, 0, 2.775, 14.306, 26.854, 0, 1, 0, 0, 1, 0, 0.02, 14.816, 26.854, 0, 1, 0, 0, 1, 0, -2.56, 15.156, 26.854, 0, 1, 0, 0, 1, 0, -5.32, 15.571, 26.854, 0, 1, 0, 0, 1, 0, -8.135, 15.911, 26.854, 0, 1, 0, 0, 1, 0, -11.4855, 16.266, 27.0139, 0, 1, 0, 0, 0, 0, -13.0005, 16.5943, 24.6805, 0, 0, 0, 0, 0, 0, -8.986, 16.014, 24.681),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 11
+
+[sub_resource type="Curve3D" id="Curve3D_lv5oo"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 1, 0, -12.993, 16.853, 19.7335, 0, 1, 0, 0, 1, 0, -12.993, 16.853, 16.698, 0, 1, 0, 0, 1, 0, -12.993, 16.853, 13.228, 0, 1, 0, 0, 0, 0, -10.948, 16.7637, 13.228, 0, 0, 0, 0, 1, 0, -8.093, 16.764, 14.803, 0, 0, 0, 0, 0, 0, -7.48793, 17.9698, 14.8204, 0, 0, 0, 0, 0, 0, -7.488, 24.82, 14.82, -1.385, 0.875, 0, 0, 0, 0, -6.888, 24.82, 15.935, 0, 0, 0, 0, 0, 0, -4.583, 24.265, 16.475),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 9
+
+[sub_resource type="Curve3D" id="Curve3D_asfrc"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 5.86981, 24.8618, 16.4518, 0, 0, 0, 0, 1, 0, 6.955, 24.862, 15.962, 0, 1, 0, 0, 1, 0, 9.835, 25.037, 15.817, 0, 1, 0, 0, 0, 0, 12.405, 25.037, 15.817, 0, 0, 0, 0, 1, 0, 17.315, 25.037, 15.817, 0, 1, 0, 0, 1, 0, 20.105, 25.037, 15.817, 0, 1, 0, 0, 0, 0, 23.145, 24.8627, 15.817, 0, 0, 0, 0, 0, 0, 25.575, 24.8627, 20.212, 0, 0, 0, 0, 0, 0, 30.355, 24.8627, 20.742, 0, 0, 0, 0, 0, 0, 31.55, 24.8627, 25.327, 0, 0, 0, 0, 0, 0, 34.685, 24.8627, 26.477, 0, 0, 0, 0, 0, 0, 34.85, 24.8627, 28.512),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 12
-
-[sub_resource type="Curve3D" id="Curve3D_asfrc"]
 
 [sub_resource type="Animation" id="Animation_k1g0a"]
 resource_name = "toggle"
@@ -102,8 +115,11 @@ size = Vector3(8.43848, 2.60128, 6.39624)
 [sub_resource type="BoxShape3D" id="BoxShape3D_gvhfo"]
 size = Vector3(7.52319, 4.48179, 3.46484)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_saq6h"]
+size = Vector3(7.70038, 2.1008, 11.3713)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_7v36p"]
-size = Vector3(14.4878, 3.08904, 14.449)
+size = Vector3(4.94568, 1.47741, 6.52964)
 
 [sub_resource type="Curve3D" id="Curve3D_krrxg"]
 _data = {
@@ -286,7 +302,7 @@ environment = ExtResource("1_4udou")
 camera_attributes = SubResource("CameraAttributesPractical_u8ojw")
 
 [node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("2_baaoy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.49776)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.195315, 5.49776)
 view = NodePath("../View")
 
 [node name="hat-cap2" parent="Player/Character/character/root/torso/antenna" index="0" instance=ExtResource("3_jpj6t")]
@@ -303,7 +319,7 @@ visible = false
 
 [node name="View" type="Node3D" parent="." node_paths=PackedStringArray("target") groups=["View"]]
 process_mode = 3
-transform = Transform3D(-1, 6.38135e-08, -1.36849e-07, 0, 0.906308, 0.422618, 1.50996e-07, 0.422618, -0.906308, 0, 33.2742, 191.935)
+transform = Transform3D(-1, 6.38135e-08, -1.36849e-07, 0, 0.906308, 0.422618, 1.50996e-07, 0.422618, -0.906308, 0, 0, 0)
 script = ExtResource("5_wsti2")
 target = NodePath("../Player")
 
@@ -418,6 +434,9 @@ transform = Transform3D(0.879718, 0, 0, 0, 3.93716, 0, 0, 0, 0.863352, -9.02532,
 [node name="stairs51" parent="Level" instance=ExtResource("7_u6vlp")]
 transform = Transform3D(0.879718, 0, 0, 0, 3.93716, 0, 0, 0, 0.863352, -9.02532, 15.4273, 21.9279)
 
+[node name="stairs66" parent="Level" instance=ExtResource("7_u6vlp")]
+transform = Transform3D(0.879718, 0, 0, 0, 3.93716, 0, 0, 0, 0.863352, -9.02532, 16.5496, 19.2878)
+
 [node name="stairs10" parent="Level" instance=ExtResource("7_u6vlp")]
 transform = Transform3D(0.354, 0, 0, 0, 20.915, 0, 0, 0, 0.354, 14.4495, -2.32126, 37.849)
 
@@ -478,6 +497,9 @@ transform = Transform3D(0.354, 0, 0, 0, 28.3534, 0, 0, 0, 0.354, -8.96069, 1.372
 [node name="stairs52" parent="Level" instance=ExtResource("7_u6vlp")]
 transform = Transform3D(0.354, 0, 0, 0, 28.3534, 0, 0, 0, 0.354, -8.96069, 1.37286, 21.989)
 
+[node name="stairs67" parent="Level" instance=ExtResource("7_u6vlp")]
+transform = Transform3D(0.354, 0, 0, 0, 37.2913, 0, 0, 0, 0.354, -8.96069, 1.37286, 19.3369)
+
 [node name="child_1" type="Node3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.859, 28.484)
 
@@ -491,16 +513,22 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 10.942
 transform = Transform3D(-0.65, 0, -5.68248e-08, 0, 0.65, 0, 5.68248e-08, 0, -0.65, 0, 0, 0)
 
 [node name="child_3" type="Node3D" parent="Level"]
-transform = Transform3D(0.745383, 0, 0.666637, 0, 1, 0, -0.666637, 0, 0.745383, 3.15488, 11.7651, 19.4449)
+transform = Transform3D(-0.630947, 0, -0.775827, 0, 1, 0, 0.775827, 0, -0.630947, 3.15488, 11.7651, 19.4449)
 
 [node name="character4" parent="Level/child_3" instance=ExtResource("8_bqlno")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0, 0)
+
+[node name="child_3,5" type="Node3D" parent="Level"]
+transform = Transform3D(-0.998449, 0, 0.0556819, 0, 1, 0, -0.0556819, 0, -0.998449, -12.993, 16.853, 19.7335)
+
+[node name="character4" parent="Level/child_3,5" instance=ExtResource("8_bqlno")]
 transform = Transform3D(-0.648254, 0, -0.0476048, 0, 0.65, 0, 0.0476048, 0, -0.648254, 0, 0, 0)
 
 [node name="child_4" type="Node3D" parent="Level"]
-transform = Transform3D(0.900129, 0, 0.435624, 0, 1, 0, -0.435624, 0, 0.900129, 5.83843, 24.8618, 17.387)
+transform = Transform3D(0.900129, 0, 0.435624, 0, 1, 0, -0.435624, 0, 0.900129, 5.86981, 24.8618, 16.4518)
 
 [node name="character5" parent="Level/child_4" instance=ExtResource("8_bqlno")]
-transform = Transform3D(0.0504895, 0, -0.648036, 0, 0.65, 0, 0.648036, 0, 0.0504895, 0.613642, 0, -0.811417)
+transform = Transform3D(0.0504895, 0, -0.648036, 0, 0.65, 0, 0.648036, 0, 0.0504895, 0, 0, 0)
 
 [node name="child_path_1" parent="Level" node_paths=PackedStringArray("object_to_move") instance=ExtResource("9_qnfra")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00230551, 4.76837e-07, -0.0136247)
@@ -539,9 +567,23 @@ is_on_from_start = false
 stop_at_end = true
 
 [node name="PathFollow3D" parent="Level/child_path_3" index="0"]
-transform = Transform3D(7.54977e-08, 0.999997, -4.37113e-08, 0, -4.37112e-08, -0.999998, -0.999997, 7.54976e-08, -3.30011e-15, 3.15488, 11.7651, 19.4449)
+transform = Transform3D(-4.37113e-08, 0.999997, -4.37113e-08, 0, -4.37113e-08, -0.999998, -0.999997, -4.37113e-08, 1.91068e-15, 3.15488, 11.7651, 19.4449)
 
 [node name="RemoteTransform3D" parent="Level/child_path_3/PathFollow3D" index="0"]
+update_scale = false
+
+[node name="child_path_3,5" parent="Level" node_paths=PackedStringArray("object_to_move") instance=ExtResource("9_qnfra")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00230551, 4.76837e-07, -0.0136247)
+curve = SubResource("Curve3D_lv5oo")
+object_to_move = NodePath("../child_3,5")
+movement_speed = 10.0
+is_on_from_start = false
+stop_at_end = true
+
+[node name="PathFollow3D" parent="Level/child_path_3,5" index="0"]
+transform = Transform3D(-4.37113e-08, 0.999997, -4.37113e-08, 0, -4.37112e-08, -0.999998, -0.999997, -4.37112e-08, 1.91068e-15, -12.993, 16.853, 19.7335)
+
+[node name="RemoteTransform3D" parent="Level/child_path_3,5/PathFollow3D" index="0"]
 update_scale = false
 
 [node name="child_path_4" parent="Level" node_paths=PackedStringArray("object_to_move") instance=ExtResource("9_qnfra")]
@@ -553,7 +595,7 @@ is_on_from_start = false
 stop_at_end = true
 
 [node name="PathFollow3D" parent="Level/child_path_4" index="0"]
-transform = Transform3D(-0.000115556, 0.143067, -0.989711, 7.45056e-09, 0.98971, 0.143067, 0.999997, 1.65249e-05, -0.000114369, -13.0005, 16.5943, 24.6805)
+transform = Transform3D(0.411402, -0.000153313, -0.91145, 0, 0.999996, -0.000168208, 0.911449, 6.92013e-05, 0.411403, 5.86981, 24.8618, 16.4518)
 
 [node name="RemoteTransform3D" parent="Level/child_path_4/PathFollow3D" index="0"]
 update_scale = false
@@ -617,15 +659,37 @@ collision_mask = 4
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/child_button_3/ButtonArea3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.07588, 1.63663, 1.93518)
-shape = SubResource("BoxShape3D_7v36p")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.926809, 3.301)
+shape = SubResource("BoxShape3D_saq6h")
 
 [node name="CooldownTimer" type="Timer" parent="Level/child_button_3"]
 wait_time = 4096.0
 one_shot = true
 
+[node name="child_button_3,5" type="Node3D" parent="Level" node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.993, 16.853, 19.7335)
+script = ExtResource("9_ty5yp")
+target = NodePath("../child_path_3,5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Level/child_button_3,5"]
+libraries = {
+"": SubResource("AnimationLibrary_8vkdc")
+}
+
+[node name="ButtonArea3D" type="Area3D" parent="Level/child_button_3,5"]
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/child_button_3,5/ButtonArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.91183, 1.40874, 0.837818)
+shape = SubResource("BoxShape3D_7v36p")
+
+[node name="CooldownTimer" type="Timer" parent="Level/child_button_3,5"]
+wait_time = 4096.0
+one_shot = true
+
 [node name="child_button_4" type="Node3D" parent="Level" node_paths=PackedStringArray("target")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.15488, 11.7651, 19.4449)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.52885, 24.8842, 16.0534)
 script = ExtResource("9_ty5yp")
 target = NodePath("../child_path_4")
 
@@ -639,7 +703,7 @@ collision_mask = 4
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/child_button_4/ButtonArea3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.07588, 1.63663, 1.93518)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.618768, 0.630705, 1.38116)
 shape = SubResource("BoxShape3D_7v36p")
 
 [node name="CooldownTimer" type="Timer" parent="Level/child_button_4"]
@@ -772,7 +836,7 @@ is_on_from_start = false
 ping_pong = true
 
 [node name="PathFollow3D" parent="Level/moving_object_path2" index="0"]
-transform = Transform3D(7.54979e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, 7.54979e-08, -3.30012e-15, 5.22462, 0.141091, 37.8657)
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 5.22462, 0.141091, 37.8657)
 
 [node name="RemoteTransform3D" parent="Level/moving_object_path2/PathFollow3D" index="0"]
 update_scale = false
@@ -811,7 +875,7 @@ is_on_from_start = false
 ping_pong = true
 
 [node name="PathFollow3D" parent="Level/moving_object_path3" index="0"]
-transform = Transform3D(-4.37114e-08, 0.999997, -4.37113e-08, 0, -4.37113e-08, -0.999997, -0.999999, -4.37113e-08, 1.91068e-15, -9.66544, 15.7767, 13.3061)
+transform = Transform3D(-4.37113e-08, 0.999997, -4.37113e-08, 0, -4.37113e-08, -0.999997, -0.999999, -4.37113e-08, 1.91068e-15, -9.66544, 15.7767, 13.3061)
 
 [node name="RemoteTransform3D" parent="Level/moving_object_path3/PathFollow3D" index="0"]
 update_scale = false
@@ -855,6 +919,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.10305, 15.9804, 27.0562)
 
 [node name="checkpoint4" parent="Level" instance=ExtResource("14_d35sw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.98346, 24.8678, 26.6081)
+
+[node name="ladder-long2" parent="Level" instance=ExtResource("15_scled")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.42455, 16.9318, 14.8052)
+
+[node name="ladder-long3" parent="Level" instance=ExtResource("15_scled")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.42455, 18.9318, 14.8052)
+
+[node name="ladder-long4" parent="Level" instance=ExtResource("15_scled")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.42455, 20.9318, 14.8052)
+
+[node name="ladder-long5" parent="Level" instance=ExtResource("15_scled")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.42455, 22.9318, 14.8052)
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
@@ -1012,7 +1088,7 @@ mesh = SubResource("ArrayMesh_6gl6g")
 skeleton = NodePath("")
 
 [node name="platform3" type="MeshInstance3D" parent="platform-falling6"]
-transform = Transform3D(1.095, 0, 0, 0, 0.548, 0, 0, 0, 1.095, 0, 0.234689, 0)
+transform = Transform3D(1.095, 0, 0, 0, 0.543425, 0.141202, 0, -0.0706654, 1.08586, 0, 0.147845, 0)
 mesh = SubResource("ArrayMesh_075ph")
 skeleton = NodePath("")
 
@@ -1021,10 +1097,11 @@ libraries = {
 "": SubResource("AnimationLibrary_mmy7m")
 }
 
-[node name="platform-falling7" parent="." instance=ExtResource("24_t1m71")]
-
 [node name="platform-falling8" parent="." instance=ExtResource("24_t1m71")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.13889, 15.4565, 27.023)
+
+[node name="platform3" parent="platform-falling8" index="3"]
+transform = Transform3D(1.095, 0, 0, 0, 0.543973, -0.132498, 0, 0.0663097, 1.08695, 0, 0.172721, -0.0834522)
 
 [node name="checkpoint" parent="." instance=ExtResource("14_d35sw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00164, 11.7403, 16.6113)
@@ -1158,6 +1235,7 @@ speedrun_mode = true
 [connection signal="area_entered" from="Level/child_button_1/ButtonArea3D" to="Level/child_button_1" method="_on_button_area_3d_area_entered"]
 [connection signal="area_entered" from="Level/child_button_2/ButtonArea3D" to="Level/child_button_2" method="_on_button_area_3d_area_entered"]
 [connection signal="area_entered" from="Level/child_button_3/ButtonArea3D" to="Level/child_button_3" method="_on_button_area_3d_area_entered"]
+[connection signal="area_entered" from="Level/child_button_3,5/ButtonArea3D" to="Level/child_button_3,5" method="_on_button_area_3d_area_entered"]
 [connection signal="area_entered" from="Level/child_button_4/ButtonArea3D" to="Level/child_button_4" method="_on_button_area_3d_area_entered"]
 [connection signal="area_entered" from="Level/moving_object_path2/platform-moving/button3/ButtonArea3D" to="Level/moving_object_path2/platform-moving/button3" method="_on_button_area_3d_area_entered"]
 [connection signal="area_entered" from="Level/moving_object_path3/platform-moving/button3/ButtonArea3D" to="Level/moving_object_path3/platform-moving/button3" method="_on_button_area_3d_area_entered"]
@@ -1170,6 +1248,8 @@ speedrun_mode = true
 [editable path="Level/child_path_1"]
 [editable path="Level/child_path_2"]
 [editable path="Level/child_path_3"]
+[editable path="Level/child_path_3,5"]
 [editable path="Level/child_path_4"]
 [editable path="Level/moving_object_path2"]
 [editable path="Level/moving_object_path3"]
+[editable path="platform-falling8"]
