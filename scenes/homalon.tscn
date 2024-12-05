@@ -43,10 +43,10 @@ point_count = 8
 
 [sub_resource type="Curve3D" id="Curve3D_5i4yu"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 2, 0, 10.942, 8.996, 27.952, 0, 2, 0, 0, 2, 0, 10.942, 8.996, 24.137, 0, 2, 0, 0, 2, 0, 10.942, 8.996, 19.937, 0, 3, 0, 0, 2, 0, 14.437, 9.891, 19.937, 0, 2, 0, 0, 2, 0, 14.932, 10.206, 17.057, 0, 2, 0, 0, 2, 0, 14.932, 10.206, 14.367, 0, 2, 0, 0, 2, 0, 14.932, 10.206, 11.627, 0, 2, 0, 0, 2, 0, 14.447, 10.021, 8.63103, 0, 2, 0, 0, 2, 0, 9.76348, 9.03368, 8.631, 0, 2, 0, 0, 2, 0, 3.977, 9.034, 8.766, 0, 2, 0, 0, 0, 0, 3.312, 9.034, 12.716, 0, 0, 0, 0, 0, 0, 6.977, 9.034, 12.716),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 2, 0, 10.942, 8.996, 27.952, 0, 2, 0, 0, 2, 0, 10.942, 8.996, 24.137, 0, 2, 0, 0, 2, 0, 10.942, 8.996, 19.937, 0, 3, 0, 0, 2, 0, 14.437, 9.891, 19.937, 0, 2, 0, 0, 2, 0, 14.932, 10.206, 17.057, 0, 2, 0, 0, 2, 0, 14.932, 10.206, 14.367, 0, 2, 0, 0, 2, 0, 14.932, 10.206, 11.627, 0, 2, 0, 0, 2, 0, 14.447, 10.021, 8.63103, 0, 2, 0, 0, 2, 0, 9.76348, 9.03368, 8.631, 0, 2, 0, 0, 2, 0, 3.977, 9.034, 8.766, 0, 2, 0, 0, 5, 0, 3.312, 9.034, 12.716, 0, 1, 0, 0, 0, 0, 6.977, 12.3166, 12.716, 0, 0, 0, 0, 0, 0, 7.987, 12.317, 13.541, 0, 0, 0, 0, 0, 0, 7.987, 12.317, 11.406, 0, 0, 0, 0, 0, 0, 5.907, 12.317, 11.406, 0, 1, 0, 0, 1, 0, 5.452, 12.317, 13.566, 0, 1, 0, 0, 1, 0, 4.187, 12.317, 14.511, 0, 1, 0, 0, 0, 0, 4.187, 11.937, 16.256, 0, 0, 0, 0, 0, 0, 6.33511, 11.937, 15.701),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 12
+point_count = 19
 
 [sub_resource type="Curve3D" id="Curve3D_grwwq"]
 _data = {
@@ -359,14 +359,20 @@ transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 11.2695, 21.6353)
 [node name="stairs46" parent="Level" instance=ExtResource("7_u6vlp")]
 transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 24.3495, 21.6353)
 
+[node name="stairs72" parent="Level" instance=ExtResource("7_u6vlp")]
+transform = Transform3D(1.8561, 0, 0, 0, 1, 0, 0, 0, 4.80711, 24.9819, 24.3495, 21.6353)
+
+[node name="stairs73" parent="Level" instance=ExtResource("7_u6vlp")]
+transform = Transform3D(-8.11327e-08, 0, -3.06847, 0, 1, 0, 1.8561, 0, -1.34127e-07, 32.2671, 24.3495, 17.1055)
+
 [node name="stairs63" parent="Level" instance=ExtResource("7_u6vlp")]
-transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 29.5534, 24.3495, 21.6353)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.2993, 24.3495, 27.5678)
+
+[node name="stairs71" parent="Level" instance=ExtResource("7_u6vlp")]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 29.5534, 12.9693, 21.6353)
 
 [node name="stairs62" parent="Level" instance=ExtResource("7_u6vlp")]
 transform = Transform3D(5, 0, 0, 0, 1.5535, 0, 0, 0, 5, 0, 23.742, 21.6353)
-
-[node name="stairs64" parent="Level" instance=ExtResource("7_u6vlp")]
-transform = Transform3D(5, 0, 0, 0, 1.5535, 0, 0, 0, 5, 29.553, 23.742, 21.635)
 
 [node name="stairs4" parent="Level" instance=ExtResource("7_u6vlp")]
 transform = Transform3D(0.354, 0, 0, 0, 20.915, 0, 0, 0, 0.354, 6.83757, 1.37286, 14.8181)
@@ -374,11 +380,17 @@ transform = Transform3D(0.354, 0, 0, 0, 20.915, 0, 0, 0, 0.354, 6.83757, 1.37286
 [node name="stairs48" parent="Level" instance=ExtResource("7_u6vlp")]
 transform = Transform3D(0.354, 0, 0, 0, 23.0078, 0, 0, 0, 0.354, 6.83757, 13.5789, 14.7504)
 
-[node name="stairs65" parent="Level" instance=ExtResource("7_u6vlp")]
-transform = Transform3D(5.13562, 0, 0, 0, -52.9627, -6.01791e-07, 0, 3.29296e-06, -4.76549, 29.6155, 23.9285, 22.2215)
-
 [node name="stairs49" parent="Level" instance=ExtResource("7_u6vlp")]
 transform = Transform3D(0.354, 0, 0, 0, 23.1909, 0, 0, 0, 0.354, 6.8798, 13.3928, 28.5465)
+
+[node name="stairs65" parent="Level" instance=ExtResource("7_u6vlp")]
+transform = Transform3D(0.354, 0, 0, 0, 23.1909, 0, 0, 0, 0.354, 36.2322, 13.3928, 28.5465)
+
+[node name="stairs68" parent="Level" instance=ExtResource("7_u6vlp")]
+transform = Transform3D(0.354, 0, 0, 0, 23.1909, 0, 0, 0, 0.354, 36.2322, 13.3928, 14.8656)
+
+[node name="stairs70" parent="Level" instance=ExtResource("7_u6vlp")]
+transform = Transform3D(0.354, 0, 0, 0, 23.1909, 0, 0, 0, 0.354, 22.7212, 13.3928, 28.0669)
 
 [node name="stairs5" parent="Level" instance=ExtResource("7_u6vlp")]
 transform = Transform3D(0.354, 0, 0, 0, 20.915, 0, 0, 0, 0.354, -6.78818, 1.37286, 14.8181)
@@ -567,7 +579,7 @@ is_on_from_start = false
 stop_at_end = true
 
 [node name="PathFollow3D" parent="Level/child_path_3" index="0"]
-transform = Transform3D(7.54977e-08, 0.999997, -4.37113e-08, 0, -4.37113e-08, -0.999998, -0.999997, 7.54977e-08, -3.30011e-15, 3.15488, 11.7651, 19.4449)
+transform = Transform3D(-4.37113e-08, 0.999997, -4.37113e-08, 0, -4.37113e-08, -0.999998, -0.999997, -4.37113e-08, 1.91068e-15, 3.15488, 11.7651, 19.4449)
 
 [node name="RemoteTransform3D" parent="Level/child_path_3/PathFollow3D" index="0"]
 update_scale = false
@@ -581,7 +593,7 @@ is_on_from_start = false
 stop_at_end = true
 
 [node name="PathFollow3D" parent="Level/child_path_3,5" index="0"]
-transform = Transform3D(-4.37113e-08, 0.999997, -4.37113e-08, 0, -4.37112e-08, -0.999998, -0.999997, -4.37112e-08, 1.91068e-15, -12.993, 16.853, 19.7335)
+transform = Transform3D(-4.37113e-08, 0.999997, -4.37113e-08, 0, -4.37113e-08, -0.999998, -0.999997, -4.37113e-08, 1.91068e-15, -12.993, 16.853, 19.7335)
 
 [node name="RemoteTransform3D" parent="Level/child_path_3,5/PathFollow3D" index="0"]
 update_scale = false
@@ -595,7 +607,7 @@ is_on_from_start = false
 stop_at_end = true
 
 [node name="PathFollow3D" parent="Level/child_path_4" index="0"]
-transform = Transform3D(0.411402, -0.000153313, -0.91145, 0, 0.999996, -0.000168208, 0.911449, 6.92013e-05, 0.411403, 5.86981, 24.8618, 16.4518)
+transform = Transform3D(0.411385, -0.000153316, -0.911458, -7.27592e-12, 0.999996, -0.000168209, 0.911457, 6.91991e-05, 0.411386, 5.86981, 24.8618, 16.4518)
 
 [node name="RemoteTransform3D" parent="Level/child_path_4/PathFollow3D" index="0"]
 update_scale = false
@@ -1170,7 +1182,7 @@ transform = Transform3D(1, 0, 0, 0, 1.5738, 0, 0, 0, 1, -4.59696, 23.8054, 16.52
 transform = Transform3D(1, 0, 0, 0, 1.5738, 0, 0, 0, 1, 4.31567, 23.8054, 26.7741)
 
 [node name="block-snow10" parent="." instance=ExtResource("25_hkjow")]
-transform = Transform3D(-2.97802e-07, 0, -7.24881, 0, 1, 0, 6.81291, 0, -3.16855e-07, 26.754, 23.9472, 24.6002)
+transform = Transform3D(-5.24537e-07, 0, -12, 0, 1, 0, 12, 0, -5.24537e-07, 29.3893, 23.9472, 22.5857)
 
 [node name="block-snow11" parent="." instance=ExtResource("25_hkjow")]
 transform = Transform3D(-2.52346e-07, 0, -5.13034, 0, 1, 0, 5.77301, 0, -2.24254e-07, 34.5321, 23.9472, 22.3309)
@@ -1185,7 +1197,10 @@ transform = Transform3D(-9.01863e-08, 0, -4.26567, 0, 1, 0, 2.06322, 0, -1.86459
 transform = Transform3D(-2.06307e-07, 0, -6.99229, 0, 1, 0, 4.71974, 0, -3.05643e-07, 33.2592, 23.9472, 17.404)
 
 [node name="block-snow15" parent="." instance=ExtResource("25_hkjow")]
-transform = Transform3D(-1.95506e-07, 0, -5.76077, 0, 1, 0, 4.47265, 0, -2.51811e-07, 28.2195, 23.9472, 16.949)
+transform = Transform3D(-1.95506e-07, 0, -5.76077, 0, 1, 0, 4.47265, 0, -2.51811e-07, 28.2195, 23.9472, 16.4971)
+
+[node name="block-snow16" parent="." instance=ExtResource("25_hkjow")]
+transform = Transform3D(-1.95506e-07, 0, -6.97648, 0, 1, 0, 4.47265, 0, -3.04951e-07, 30.5315, 23.9472, 27.3)
 
 [node name="block-snow-overhang-large6" parent="." instance=ExtResource("26_lgw71")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1.5738, 0, 1, 0, -4.37114e-08, 29.698, 23.8054, 16.9021)
