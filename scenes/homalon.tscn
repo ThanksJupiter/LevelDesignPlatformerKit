@@ -360,7 +360,7 @@ transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 11.2695, 21.6353)
 transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 24.3495, 21.6353)
 
 [node name="stairs72" parent="Level" instance=ExtResource("7_u6vlp")]
-transform = Transform3D(1.8561, 0, 0, 0, 1, 0, 0, 0, 4.80711, 24.9819, 24.3495, 21.6353)
+transform = Transform3D(1.8561, 0, 0, 0, 1, 0, 0, 0, 4.80711, 24.9819, 24.3495, 21.4192)
 
 [node name="stairs73" parent="Level" instance=ExtResource("7_u6vlp")]
 transform = Transform3D(-8.11327e-08, 0, -3.06847, 0, 1, 0, 1.8561, 0, -1.34127e-07, 32.2671, 24.3495, 17.1055)
@@ -373,6 +373,9 @@ transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 29.5534, 12.9693, 21.6353)
 
 [node name="stairs62" parent="Level" instance=ExtResource("7_u6vlp")]
 transform = Transform3D(5, 0, 0, 0, 1.5535, 0, 0, 0, 5, 0, 23.742, 21.6353)
+
+[node name="stairs64" parent="Level" instance=ExtResource("7_u6vlp")]
+transform = Transform3D(5, 0, 0, 0, 1.5535, 0, 0, 0, 5, 29.6558, 23.742, 21.6071)
 
 [node name="stairs4" parent="Level" instance=ExtResource("7_u6vlp")]
 transform = Transform3D(0.354, 0, 0, 0, 20.915, 0, 0, 0, 0.354, 6.83757, 1.37286, 14.8181)
