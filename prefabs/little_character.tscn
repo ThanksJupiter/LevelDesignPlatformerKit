@@ -1,10 +1,11 @@
-[gd_scene load_steps=25 format=4 uid="uid://bbttb5ntkln84"]
+[gd_scene load_steps=26 format=4 uid="uid://bbttb5ntkln84"]
 
 [ext_resource type="PackedScene" uid="uid://xy8rvnjp22n5" path="res://models/core_models/character.glb" id="1_dcp7o"]
 [ext_resource type="Texture2D" uid="uid://cpdfl0kuff6yq" path="res://models/core_models/Textures/feet_colormap.png" id="2_3ny7c"]
 [ext_resource type="Texture2D" uid="uid://bvj25ii6y01ic" path="res://models/prototyping/models/Textures/colormap.png" id="2_a77dx"]
 [ext_resource type="PackedScene" uid="uid://d0f5xfyn1x1a1" path="res://models/props/tree-snow.glb" id="3_c6fxu"]
 [ext_resource type="Texture2D" uid="uid://dsyh26o731f5y" path="res://models/core_models/Textures/edited_character_colormap.png" id="3_oj4n5"]
+[ext_resource type="PackedScene" uid="uid://dtjvjdjl8cs6e" path="res://models/core_models/flag.glb" id="4_gk0t7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gaane"]
 resource_name = "colormap"
@@ -258,6 +259,9 @@ mesh = SubResource("ArrayMesh_txlwd")
 [node name="arm-left" parent="character/root/torso" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.302629, 0.175, -0.00101662)
 mesh = SubResource("ArrayMesh_75uj6")
+
+[node name="flag" parent="character/root/torso/arm-left" index="0" instance=ExtResource("4_gk0t7")]
+transform = Transform3D(-3.43134e-08, 0, 0.785, 0, 0.785, 0, -0.785, 0, -3.43134e-08, 0.190695, -0.142806, 0)
 
 [node name="arm-right" parent="character/root/torso" index="1"]
 mesh = SubResource("ArrayMesh_p5o4e")

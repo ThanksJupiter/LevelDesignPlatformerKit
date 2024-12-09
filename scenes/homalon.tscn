@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=4 uid="uid://btevw17etm4j8"]
+[gd_scene load_steps=73 format=4 uid="uid://btevw17etm4j8"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_4udou"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_baaoy"]
@@ -82,10 +82,10 @@ point_count = 10
 
 [sub_resource type="Curve3D" id="Curve3D_5i4yu"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 2, 0, 10.942, 8.996, 27.952, 0, 2, 0, 0, 2, 0, 10.942, 8.996, 24.137, 0, 2, 0, 0, 2, 0, 10.942, 8.996, 19.937, 0, 3, 0, 0, 2, 0, 14.437, 9.891, 19.937, 0, 2, 0, 0, 2, 0, 14.932, 10.206, 17.057, 0, 2, 0, 0, 2, 0, 14.932, 10.206, 14.367, 0, 2, 0, 0, 2, 0, 14.932, 10.206, 11.627, 0, 2, 0, 0, 2, 0, 14.447, 10.021, 8.63103, 0, 2, 0, 0, 2, 0, 9.76348, 9.03368, 8.631, 0, 2, 0, 0, 2, 0, 3.977, 9.034, 8.766, 0, 2, 0, 0, 5, 0, 3.312, 9.034, 12.716, 0, 1, 0, 0, 0, 0, 6.977, 12.3166, 12.716, 0, 0, 0, 0, 0, 0, 7.987, 12.317, 13.541, 0, 0, 0, 0, 0, 0, 7.987, 12.317, 11.406, 0, 0, 0, 0, 0, 0, 5.907, 12.317, 11.406, 0, 1, 0, 0, 1, 0, 5.452, 12.317, 13.566, 0, 1, 0, 0, 1, 0, 4.187, 12.317, 14.511, 0, 1, 0, 0, 0, 0, 4.187, 11.937, 16.256, 0, 0, 0, 0, 0, 0, 6.33511, 11.937, 15.701),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 2, 0, 10.942, 8.996, 27.952, 0, 2, 0, 0, 0, 0, 10.942, 8.996, 24.137, 0, 2, 0, 0, 2, 0, 10.942, 8.996, 19.937, 0, 3, 0, 0, 2, 0, 14.437, 9.891, 19.937, 0, 2, 0, 0, 2, 0, 14.932, 10.206, 17.057, 0, 2, 0, 0, 2, 0, 14.932, 10.206, 14.367, 0, 2, 0, 0, 2, 0, 14.932, 10.206, 11.627, 0, 2, 0, 0, 2, 0, 14.447, 10.021, 8.63103, 0, 2, 0, 0, 2, 0, 9.76348, 9.03368, 8.631, 0, 2, 0, 0, 2, 0, 3.977, 9.034, 8.766, 0, 2, 0, 0, 5, 0, 3.312, 9.034, 12.716, 0, 1, 0, 0, 1, 0, 4.187, 12.317, 14.511, 0, 1, 0, 0, 0, 0, 4.187, 11.937, 16.256, 0, 0, 0, 0, 0, 0, 6.33511, 11.937, 15.701),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 19
+point_count = 14
 
 [sub_resource type="Curve3D" id="Curve3D_grwwq"]
 _data = {
@@ -108,12 +108,19 @@ _data = {
 }
 point_count = 13
 
+[sub_resource type="Curve3D" id="Curve3D_wkm73"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 2.5, 0, 46.0718, 24.6928, 27.3152, 0, 1, 0, 0, 2.83, 2.495, 46.072, 26.5494, 28.67, 0, -2.085, 0, 0, 1, 0, 46.2789, 24.9527, 28.6808),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
 [sub_resource type="Curve3D" id="Curve3D_s3gs7"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 42.3547, 16.5878, 28.9482, 0, 0, 0, 0, 1, 0, 42.355, 16.588, 30.8488, 0, 1, 0, 0, 0, 0, 42.355, 16.588, 32.0916, 0, 0, 0, 0, 1, 0, 42.355, 16.588, 34.012, 0, 1, 0, 0, 0, 0, 42.355, 16.588, 35.192, 0, 0, 0, 0, 1, 0, 43.365, 16.588, 36.5919, 0, 1, 0, 0, 1, 0, 45.3809, 15.3982, 36.592, 0, 1, 0, 0, 1, 0, 48.6372, 15.563, 37.961, 0, 1, 0, 0, 1, 0, 52.2922, 15.563, 37.961, 0, 1, 0, 0, 0, 0, 55.5822, 16.066, 37.961, 0, 0, 0, 0, 2, 0, 57.2872, 16.066, 36.496, 0, 2, 0, 0, 1, 0, 57.2872, 13.281, 33.626, 0, 1, 0, 0, 0, 0, 57.2872, 13.2286, 31.011, 0, 0, 0, 0, 1, 0, 57.2872, 13.229, 27.611, 0, 1, 0, 0, 1, 0, 57.287, 10.249, 24.656, 0, 0, 0, 0, 1, 0, 57.287, 10.249, 19.798, 0, 1, 0, 0, 0, 0, 57.287, 10.249, 17.456, 0, 0, 0, 0, 1, 0, 56.2518, 10.249, 14.321, 0, 1, 0, 0, 1, 0, 55.561, 10.249, 12.461, 0, 1, 0, 0, 1, 0, 51.1762, 10.249, 11.5547, 0, 1, 0, 0, 0, 0, 46.8231, 10.336, 11.9819, 0, 0, 0, 0, 0, 0, 45.3118, 10.7669, 14.6238),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 42.9648, 13.5316, 28.1579, 0, 0.155, 0, 0, 1, 0, 45.35, 13.6038, 29.498, 0, 1.66, 0, 0, 1, 0, 43.3277, 16.588, 30.8488, 0, 1, 0, 0, 0, 0, 42.355, 16.588, 32.0916, 0, 0, 0, 0, 1, 0, 42.355, 16.588, 34.012, 0, 1, 0, 0, 0, 0, 42.355, 16.588, 35.192, 0, 0, 0, 0, 1, 0, 43.365, 16.588, 36.5919, 0, 1, 0, 0, 1, 0, 45.3809, 15.3982, 36.592, 0, 1, 0, 0, 1, 0, 48.6372, 15.563, 37.961, 0, 1, 0, 0, 1, 0, 52.2922, 15.563, 37.961, 0, 1, 0, 0, 0, 0, 55.5822, 16.066, 37.961, 0, 0, 0, 0, 2, 0, 57.2872, 16.066, 36.496, 0, 2, 0, 0, 1, 0, 57.2872, 13.281, 33.626, 0, 1, 0, 0, 0, 0, 57.2872, 13.2286, 31.011, 0, 0, 0, 0, 1, 0, 57.2872, 13.229, 27.611, 0, 1, 0, 0, 1, 0, 57.287, 10.249, 24.656, 0, 0, 0, 0, 1, 0, 57.287, 10.249, 19.798, 0, 1, 0, 0, 0, 0, 57.287, 10.249, 17.456, 0, 0, 0, 0, 1, 0, 56.2518, 10.249, 14.321, 0, 1, 0, 0, 1, 0, 55.561, 10.249, 12.461, 0, 1, 0, 0, 1, 0, 51.1762, 10.249, 11.5547, 0, 1, 0, 0, 0, 0, 46.8231, 10.336, 11.9819, 0, 0, 0, 0, 0, 0, 45.3118, 10.7669, 14.6238),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 22
+point_count = 23
 
 [sub_resource type="Curve3D" id="Curve3D_l60q2"]
 _data = {
@@ -182,7 +189,10 @@ size = Vector3(13.6116, 2.1008, 13.5608)
 size = Vector3(4.94568, 1.47741, 6.52964)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s0740"]
-size = Vector3(12.8105, 7.29088, 3.43001)
+size = Vector3(13.456, 7.29088, 11.0715)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7cutj"]
+size = Vector3(6.87317, 5.26114, 6.14553)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_et8es"]
 size = Vector3(5.66772, 7.29088, 9.68392)
@@ -371,7 +381,7 @@ environment = ExtResource("1_4udou")
 camera_attributes = SubResource("CameraAttributesPractical_u8ojw")
 
 [node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("2_baaoy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.5526)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.8573)
 view = NodePath("../View")
 
 [node name="hat-cap2" parent="Player/Character/character/root/torso/antenna" index="0" instance=ExtResource("3_jpj6t")]
@@ -556,11 +566,18 @@ transform = Transform3D(0.354, 0, 0, 0, 5.82723, 0, 0, 0, 3.68687, 6.83757, 11.6
 [node name="stairs69" parent="Level" instance=ExtResource("7_u6vlp")]
 transform = Transform3D(0.354, 0, 0, 0, 5.82723, 0, 0, 0, 4.7404, 48.6158, 13.102, 21.7004)
 
+[node name="stairs161" parent="Level" instance=ExtResource("7_u6vlp")]
+transform = Transform3D(0.354, 0, 0, 0, 25.1668, 0, 0, 0, 4.7404, 48.6158, -0.547824, 21.7004)
+
 [node name="stairs79" parent="Level" instance=ExtResource("7_u6vlp")]
 transform = Transform3D(0.354, 0, 0, 0, 5.82723, 0, 0, 0, 4.7404, 35.0158, 13.102, 21.7004)
 
+[node name="stairs162" parent="Level" instance=ExtResource("7_u6vlp")]
+transform = Transform3D(0.354, 0, 0, 0, 16.371, 0, 0, 0, 4.7404, 35.0158, 15.395, 21.7004)
+visible = false
+
 [node name="stairs144" parent="Level" instance=ExtResource("7_u6vlp")]
-transform = Transform3D(0.354, 0, 0, 0, 9.99009, 0, 0, 0, 4.7404, 35.0158, -0.89615, 21.7004)
+transform = Transform3D(0.354, 0, 0, 0, 27.0865, 0, 0, 0, 4.7404, 35.2181, -0.89615, 21.7004)
 
 [node name="stairs86" parent="Level" instance=ExtResource("7_u6vlp")]
 transform = Transform3D(0.354, 0, 0, 0, 5.82723, 0, 0, 0, 4.27143, 35.0158, 24.7299, 22.7588)
@@ -572,7 +589,13 @@ transform = Transform3D(-1.54738e-08, 0, 4.7404, 0, 5.82723, 0, -0.354, 0, -2.07
 transform = Transform3D(-1.54738e-08, 0, 1.83644, 0, 5.82723, 0, -0.354, 0, -8.02737e-08, 38.6232, 13.102, 27.9955)
 
 [node name="stairs123" parent="Level" instance=ExtResource("7_u6vlp")]
-transform = Transform3D(-1.54738e-08, 0, 4.7404, 0, 5.82723, 0, -0.354, 0, -2.0721e-07, 42.8819, -0.620553, 14.4885)
+transform = Transform3D(-1.54738e-08, 0, 2.71619, 0, 27.7171, 0, -0.354, 0, -1.18729e-07, 39.5881, -0.620553, 14.6301)
+
+[node name="stairs164" parent="Level" instance=ExtResource("7_u6vlp")]
+transform = Transform3D(-1.54738e-08, 0, 2.71619, 0, 22.0386, 0, -0.354, 0, -1.18729e-07, 44.703, -0.620553, 14.8332)
+
+[node name="stairs163" parent="Level" instance=ExtResource("7_u6vlp")]
+transform = Transform3D(-1.54738e-08, 0, 0.407165, 0, 27.7171, 0, -0.354, 0, -1.77978e-08, 47.1488, -0.620553, 14.6669)
 
 [node name="stairs77" parent="Level" instance=ExtResource("7_u6vlp")]
 transform = Transform3D(0.354, 0, 0, 0, 4.31814, 0, 0, 0, 1.33662, 48.7678, 24.3909, 26.383)
@@ -926,9 +949,15 @@ transform = Transform3D(0.900129, 0, 0.435624, 0, 1, 0, -0.435624, 0, 0.900129, 
 transform = Transform3D(0.0504895, 0, -0.648036, 0, 0.65, 0, 0.648036, 0, 0.0504895, 0, 0, 0)
 
 [node name="child_5" type="Node3D" parent="Level"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 42.3547, 16.5878, 28.9482)
+transform = Transform3D(-0.884459, 0, -0.466618, 0, 1, 0, 0.466618, 0, -0.884459, 46.0718, 24.6928, 27.3152)
 
 [node name="character5" parent="Level/child_5" instance=ExtResource("8_bqlno")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0, 0)
+
+[node name="child_5,5" type="Node3D" parent="Level"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 42.9648, 13.5316, 28.1579)
+
+[node name="character5" parent="Level/child_5,5" instance=ExtResource("8_bqlno")]
 transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0, 0)
 
 [node name="child_6" type="Node3D" parent="Level"]
@@ -969,7 +998,7 @@ update_scale = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00230551, 4.76837e-07, -0.0136247)
 curve = SubResource("Curve3D_5i4yu")
 object_to_move = NodePath("../child_2")
-movement_speed = 10.0
+movement_speed = 8.0
 is_on_from_start = false
 stop_at_end = true
 
@@ -997,7 +1026,7 @@ update_scale = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00230551, 4.76837e-07, -0.0136247)
 curve = SubResource("Curve3D_lv5oo")
 object_to_move = NodePath("../child_3,5")
-movement_speed = 10.0
+movement_speed = 8.0
 is_on_from_start = false
 stop_at_end = true
 
@@ -1011,7 +1040,7 @@ update_scale = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00230551, 4.76837e-07, -0.0136247)
 curve = SubResource("Curve3D_asfrc")
 object_to_move = NodePath("../child_4")
-movement_speed = 10.0
+movement_speed = 7.0
 is_on_from_start = false
 stop_at_end = true
 
@@ -1023,23 +1052,37 @@ update_scale = false
 
 [node name="child_path_5" parent="Level" node_paths=PackedStringArray("object_to_move") instance=ExtResource("9_qnfra")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00230551, 4.76837e-07, -0.0136247)
-curve = SubResource("Curve3D_s3gs7")
+curve = SubResource("Curve3D_wkm73")
 object_to_move = NodePath("../child_5")
 movement_speed = 10.0
 is_on_from_start = false
 stop_at_end = true
 
 [node name="PathFollow3D" parent="Level/child_path_5" index="0"]
-transform = Transform3D(-0.999994, -1.66974e-08, -0.00015846, 0, 0.999994, -0.000105372, 0.00015846, -0.000105372, -0.999994, 42.3547, 16.5878, 28.9482)
+transform = Transform3D(-4.37111e-08, 0.999994, -4.37111e-08, 0, -4.37111e-08, -0.999993, -0.999993, -4.37111e-08, 1.91067e-15, 46.0718, 24.6928, 27.3152)
 
 [node name="RemoteTransform3D" parent="Level/child_path_5/PathFollow3D" index="0"]
+update_scale = false
+
+[node name="child_path_5,5" parent="Level" node_paths=PackedStringArray("object_to_move") instance=ExtResource("9_qnfra")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00230551, 4.76837e-07, -0.0136247)
+curve = SubResource("Curve3D_s3gs7")
+object_to_move = NodePath("../child_5,5")
+movement_speed = 8.0
+is_on_from_start = false
+stop_at_end = true
+
+[node name="PathFollow3D" parent="Level/child_path_5,5" index="0"]
+transform = Transform3D(-0.489831, -0.0229893, -0.871506, 1.86263e-09, 0.999646, -0.0263695, 0.871808, -0.0129167, -0.489661, 42.9648, 13.5316, 28.1579)
+
+[node name="RemoteTransform3D" parent="Level/child_path_5,5/PathFollow3D" index="0"]
 update_scale = false
 
 [node name="child_path_6" parent="Level" node_paths=PackedStringArray("object_to_move") instance=ExtResource("9_qnfra")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00230551, 4.76837e-07, -0.0136247)
 curve = SubResource("Curve3D_l60q2")
 object_to_move = NodePath("../child_6")
-movement_speed = 10.0
+movement_speed = 6.0
 is_on_from_start = false
 stop_at_end = true
 
@@ -1173,7 +1216,7 @@ wait_time = 4096.0
 one_shot = true
 
 [node name="child_button_5" type="Node3D" parent="Level" node_paths=PackedStringArray("target")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.7458, 13.8006, 27.4415)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.0718, 24.6928, 27.3152)
 script = ExtResource("9_ty5yp")
 target = NodePath("../child_path_5")
 
@@ -1187,10 +1230,32 @@ collision_mask = 4
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/child_button_5/ButtonArea3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.134674, 1.97115, 0.757813)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.188099, 1.97115, -3.06291)
 shape = SubResource("BoxShape3D_s0740")
 
 [node name="CooldownTimer" type="Timer" parent="Level/child_button_5"]
+wait_time = 4096.0
+one_shot = true
+
+[node name="child_button_5,5" type="Node3D" parent="Level" node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.9648, 13.5316, 28.1579)
+script = ExtResource("9_ty5yp")
+target = NodePath("../child_path_5,5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Level/child_button_5,5"]
+libraries = {
+"": SubResource("AnimationLibrary_8vkdc")
+}
+
+[node name="ButtonArea3D" type="Area3D" parent="Level/child_button_5,5"]
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/child_button_5,5/ButtonArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.77412, 0.956277, 0.139536)
+shape = SubResource("BoxShape3D_7cutj")
+
+[node name="CooldownTimer" type="Timer" parent="Level/child_button_5,5"]
 wait_time = 4096.0
 one_shot = true
 
@@ -1736,33 +1801,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.0801, 9.20055, 16.7605)
 [node name="coin31" parent="." instance=ExtResource("11_7woat")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.1222, 9.70055, 16.7595)
 
-[node name="coin36" parent="." instance=ExtResource("11_7woat")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.0093, -0.574956, 16.4775)
-
-[node name="coin37" parent="." instance=ExtResource("11_7woat")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.7073, -0.574956, 17.0898)
-
-[node name="coin38" parent="." instance=ExtResource("11_7woat")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.0312, -0.574956, 17.7328)
-
-[node name="coin39" parent="." instance=ExtResource("11_7woat")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.6969, -0.574956, 17.9115)
-
-[node name="coin40" parent="." instance=ExtResource("11_7woat")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.3384, -0.574956, 17.6493)
-
-[node name="coin41" parent="." instance=ExtResource("11_7woat")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.7438, -0.574956, 17.0282)
-
-[node name="coin42" parent="." instance=ExtResource("11_7woat")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4712, -0.574956, 16.4018)
-
-[node name="coin43" parent="." instance=ExtResource("11_7woat")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.7706, -0.574956, 16.1785)
-
-[node name="coin44" parent="." instance=ExtResource("11_7woat")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.7303, -0.574956, 16.9977)
-
 [node name="platform-falling26" parent="." instance=ExtResource("22_okkbe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.4436, 2.96078, 38.947)
 
@@ -1937,12 +1975,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.3633, 16.0463, 38.2924)
 [node name="checkpoint5" parent="." instance=ExtResource("14_d35sw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.3423, 10.28, 11.1194)
 
-[node name="flag2" parent="." instance=ExtResource("30_jbx0p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.534, -0.5, 26.5576)
-
-[node name="flag2" parent="flag2" index="0"]
-visible = false
-
 [node name="checkpoint6" parent="." instance=ExtResource("14_d35sw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.1469, 10.0561, 11.3428)
 
@@ -1954,6 +1986,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.1469, 10.0561, 11.3428)
 [connection signal="area_entered" from="Level/child_button_3,5/ButtonArea3D" to="Level/child_button_3,5" method="_on_button_area_3d_area_entered"]
 [connection signal="area_entered" from="Level/child_button_4/ButtonArea3D" to="Level/child_button_4" method="_on_button_area_3d_area_entered"]
 [connection signal="area_entered" from="Level/child_button_5/ButtonArea3D" to="Level/child_button_5" method="_on_button_area_3d_area_entered"]
+[connection signal="area_entered" from="Level/child_button_5,5/ButtonArea3D" to="Level/child_button_5,5" method="_on_button_area_3d_area_entered"]
 [connection signal="area_entered" from="Level/child_button_6/ButtonArea3D" to="Level/child_button_6" method="_on_button_area_3d_area_entered"]
 [connection signal="area_entered" from="Level/child_button_7/ButtonArea3D" to="Level/child_button_7" method="_on_button_area_3d_area_entered"]
 [connection signal="area_entered" from="Level/moving_object_path2/platform-moving/button3/ButtonArea3D" to="Level/moving_object_path2/platform-moving/button3" method="_on_button_area_3d_area_entered"]
@@ -1971,6 +2004,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.1469, 10.0561, 11.3428)
 [editable path="Level/child_path_3,5"]
 [editable path="Level/child_path_4"]
 [editable path="Level/child_path_5"]
+[editable path="Level/child_path_5,5"]
 [editable path="Level/child_path_6"]
 [editable path="Level/child_path_7"]
 [editable path="Level/moving_object_path2"]
@@ -1978,4 +2012,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.1469, 10.0561, 11.3428)
 [editable path="platform-falling8"]
 [editable path="checkpoint3"]
 [editable path="checkpoint3/mesh_offset/jewel"]
-[editable path="flag2"]
