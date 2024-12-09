@@ -1044,7 +1044,7 @@ is_on_from_start = false
 stop_at_end = true
 
 [node name="PathFollow3D" parent="Level/child_path_6" index="0"]
-transform = Transform3D(-0.930683, 0.00305257, 0.365787, -1.16414e-10, 0.999953, -0.00834486, -0.3658, -0.00776647, -0.930651, 32.4653, 10.6757, 20.6931)
+transform = Transform3D(-0.930684, 0.00304894, 0.365785, -1.16414e-10, 0.999953, -0.00833499, -0.365797, -0.0077573, -0.930652, 32.4653, 10.6757, 20.6931)
 
 [node name="RemoteTransform3D" parent="Level/child_path_6/PathFollow3D" index="0"]
 update_scale = false
