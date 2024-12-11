@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=4 uid="uid://btevw17etm4j8"]
+[gd_scene load_steps=74 format=4 uid="uid://btevw17etm4j8"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_4udou"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_baaoy"]
@@ -103,14 +103,14 @@ point_count = 9
 
 [sub_resource type="Curve3D" id="Curve3D_asfrc"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 5.86981, 24.8618, 16.4518, 0, 0, 0, 0, 1, 0, 6.955, 24.862, 15.962, 0, 1, 0, 0, 1, 0, 9.835, 25.037, 15.817, 0, 1, 0, 0, 0, 0, 12.405, 25.037, 15.817, 0, 0, 0, 0, 1, 0, 17.315, 25.037, 15.817, 0, 1, 0, 0, 1, 0, 20.105, 25.037, 15.817, 0, 1, 0, 0, 1, 0, 22.3636, 25.0115, 18.3359, 0, 1, 0, 0, 1, 0, 24.5774, 25.0329, 20.8633, 0, 1, 0, 0, 0, 0, 26.797, 23.478, 20.863, 0, 0, 0, 0, 1, 0, 33.752, 24.773, 20.863, 0, 1, 0, 0, 1, 0, 33.467, 24.9678, 18.208, 0, 1, 0, 1.93, 0, 0, 33.8802, 24.9872, 16.0307, 2.455, 0, 0, 0, 0, 0, 34.9322, 24.8958, 18.3459),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 5.86981, 24.8618, 16.4518, 0, 0, 0, 0, 1, 0, 6.955, 24.862, 15.962, 0, 1, 0, 0, 1, 0, 9.835, 25.037, 15.817, 0, 1, 0, 0, 0, 0, 12.405, 25.037, 15.817, 0, 0, 0, 0, 1, 0, 17.315, 25.037, 15.817, 0, 1, 0, 0, 1, 0, 20.105, 25.037, 15.817, 0, 1, 0, 0, 1, 0, 22.3636, 25.0115, 18.3359, 0, 1, 0, 0, 1, 0, 24.5774, 25.0329, 20.8633, 0, 1, 0, 0, 0, 0, 26.797, 23.478, 20.863, 0, 0, 0, 0, 1, 0, 33.752, 24.773, 20.863, 0, 1, 0, 0, 1, 0, 33.467, 24.9678, 18.208, 0, 1, 0, 1.93, 0, 0, 33.8802, 24.9872, 16.0307, 2.455, 0, 0, 0, 0, 0, 34.8666, 24.8958, 18.3459),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 13
 
 [sub_resource type="Curve3D" id="Curve3D_wkm73"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 2.5, 0, 46.0718, 24.6928, 27.3152, 0, 1, 0, 0, 2.83, 2.495, 46.072, 26.5494, 28.67, 0, -2.085, 0, 0, 1, 0, 46.2789, 24.9527, 28.6808),
+"points": PackedVector3Array(0, 0, 0, 0, 2.5, 0, 46.0718, 24.6928, 27.3152, 0, 1, 0, 0, 2.83, 2.495, 46.072, 26.5494, 28.67, 0, -2.085, 0, 0, 1, 0, 46.2789, 24.9527, 28.8521),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
@@ -373,6 +373,9 @@ _data = {
 "respawn": SubResource("Animation_4ywbb")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_1jfyn"]
+size = Vector3(13.0205, 1.85596, 12.9261)
+
 [node name="Main" type="Node3D"]
 
 [node name="Environment" type="WorldEnvironment" parent="."]
@@ -381,7 +384,7 @@ environment = ExtResource("1_4udou")
 camera_attributes = SubResource("CameraAttributesPractical_u8ojw")
 
 [node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("2_baaoy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.8573)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.3213)
 view = NodePath("../View")
 
 [node name="hat-cap2" parent="Player/Character/character/root/torso/antenna" index="0" instance=ExtResource("3_jpj6t")]
@@ -1059,7 +1062,7 @@ is_on_from_start = false
 stop_at_end = true
 
 [node name="PathFollow3D" parent="Level/child_path_5" index="0"]
-transform = Transform3D(-4.37111e-08, 0.999994, -4.37111e-08, 0, -4.37111e-08, -0.999993, -0.999993, -4.37111e-08, 1.91067e-15, 46.0718, 24.6928, 27.3152)
+transform = Transform3D(7.54974e-08, 0.999994, -4.37111e-08, 0, -4.37111e-08, -0.999993, -0.999993, 7.54974e-08, -3.30009e-15, 46.0718, 24.6928, 27.3152)
 
 [node name="RemoteTransform3D" parent="Level/child_path_5/PathFollow3D" index="0"]
 update_scale = false
@@ -1073,7 +1076,7 @@ is_on_from_start = false
 stop_at_end = true
 
 [node name="PathFollow3D" parent="Level/child_path_5,5" index="0"]
-transform = Transform3D(-0.489831, -0.0229893, -0.871506, 1.86263e-09, 0.999646, -0.0263695, 0.871808, -0.0129167, -0.489661, 42.9648, 13.5316, 28.1579)
+transform = Transform3D(-0.48982, -0.0229992, -0.871512, 2.79395e-09, 0.999646, -0.0263806, 0.871814, -0.0129219, -0.48965, 42.9648, 13.5316, 28.1579)
 
 [node name="RemoteTransform3D" parent="Level/child_path_5,5/PathFollow3D" index="0"]
 update_scale = false
@@ -1835,7 +1838,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.79389, 24.5223, 15.796)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.81222, 25.071, 15.8035)
 
 [node name="platform-falling12" parent="." instance=ExtResource("22_okkbe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.0701, 24.5223, 15.7959)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.0681, 24.5211, 15.7978)
 
 [node name="coin14" parent="." instance=ExtResource("11_7woat")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.0832, 25.071, 15.8035)
@@ -1968,6 +1971,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.8985, 13.4932, 21.6353)
 
 [node name="mesh_offset" parent="checkpoint3" index="0"]
 visible = false
+
+[node name="CollisionShape3D" parent="checkpoint3/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.177979, 0.128601)
+shape = SubResource("BoxShape3D_1jfyn")
 
 [node name="checkpoint4" parent="." instance=ExtResource("14_d35sw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.3633, 16.0463, 38.2924)
